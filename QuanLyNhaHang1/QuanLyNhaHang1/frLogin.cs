@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using System.Data;
 
 namespace QuanLyNhaHang1
 {
@@ -18,7 +17,7 @@ namespace QuanLyNhaHang1
         {
             InitializeComponent();
         }
-
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-4IRSTF4;Initial Catalog=QLNH2_new;Integrated Security=True");
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -33,18 +32,16 @@ namespace QuanLyNhaHang1
         {
 
         }
-
         private void Login_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if(MessageBox.Show("Bạn có muốn thoát chương trình?","Thông báo",MessageBoxButtons.OKCancel)!= System.Windows.Forms.DialogResult.OK)
+            if (MessageBox.Show("Bạn có muốn thoát chương trình?", "Thông báo", MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)
             {
                 e.Cancel = true;
             }
         }
-
+        
         private void btnLogin_Click(object sender, EventArgs e)
-        {
-            SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-4IRSTF4;Initial Catalog=QLNH2;Integrated Security=True");
+        {  
             try
             {
                 conn.Open();
@@ -91,11 +88,11 @@ namespace QuanLyNhaHang1
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Lỗi kết nối !");
             }
-          
         }
     }
 }
+
