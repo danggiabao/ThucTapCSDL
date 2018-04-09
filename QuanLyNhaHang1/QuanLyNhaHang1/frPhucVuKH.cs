@@ -16,6 +16,7 @@ namespace QuanLyNhaHang1
         public frPhucVuKH()
         {
             InitializeComponent();
+           
         }
         SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-4IRSTF4;Initial Catalog=QLNH2_new;Integrated Security=True");
         public void showcbb()
@@ -42,6 +43,7 @@ namespace QuanLyNhaHang1
         {
             this.showcbb();
             this.showcbbKH();
+            this.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -56,6 +58,35 @@ namespace QuanLyNhaHang1
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lvPhucVu_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        List<string> lst = new List<string>();
+        public void Show()
+        {
+            conn.Open();
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select * from KHACHHANG";
+            cmd.Connection = conn;
+
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {              
+                ListViewItem liv = new ListViewItem(reader.GetInt32(0).ToString());
+                liv.SubItems.Add(reader.GetString(1));
+                lvKH.Items.Add(liv);
+            }
+            reader.Close();
+        }
+
+        private void cbbKH_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
