@@ -105,6 +105,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.Silver;
             this.panel1.Controls.Add(this.tabControl1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 28);
@@ -116,10 +117,10 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(0, 4);
+            this.tabControl1.Location = new System.Drawing.Point(3, 3);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1068, 569);
+            this.tabControl1.Size = new System.Drawing.Size(1065, 570);
             this.tabControl1.TabIndex = 5;
             // 
             // tabPage1
@@ -131,7 +132,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1060, 540);
+            this.tabPage1.Size = new System.Drawing.Size(1057, 541);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Đặt món";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
@@ -144,7 +145,7 @@
             this.panel3.Controls.Add(this.numericUpDown1);
             this.panel3.Location = new System.Drawing.Point(3, 456);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1054, 78);
+            this.panel3.Size = new System.Drawing.Size(1051, 78);
             this.panel3.TabIndex = 5;
             // 
             // textBox1
@@ -196,12 +197,11 @@
             this.panel2.Controls.Add(this.cbbMonAn);
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1054, 78);
+            this.panel2.Size = new System.Drawing.Size(1051, 78);
             this.panel2.TabIndex = 2;
             // 
             // cbbKH
             // 
-            this.cbbKH.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cbbKH.FormattingEnabled = true;
             this.cbbKH.Location = new System.Drawing.Point(218, 34);
             this.cbbKH.Name = "cbbKH";
@@ -283,11 +283,11 @@
             // 
             // cbbMonAn
             // 
-            this.cbbMonAn.CausesValidation = false;
             this.cbbMonAn.FormattingEnabled = true;
             this.cbbMonAn.Location = new System.Drawing.Point(534, 34);
             this.cbbMonAn.Name = "cbbMonAn";
             this.cbbMonAn.Size = new System.Drawing.Size(237, 24);
+            this.cbbMonAn.Sorted = true;
             this.cbbMonAn.TabIndex = 1;
             // 
             // lvPhucVu
@@ -299,7 +299,7 @@
             this.columnHeader4});
             this.lvPhucVu.Location = new System.Drawing.Point(3, 87);
             this.lvPhucVu.Name = "lvPhucVu";
-            this.lvPhucVu.Size = new System.Drawing.Size(1054, 363);
+            this.lvPhucVu.Size = new System.Drawing.Size(1051, 363);
             this.lvPhucVu.TabIndex = 4;
             this.lvPhucVu.UseCompatibleStateImageBehavior = false;
             this.lvPhucVu.View = System.Windows.Forms.View.Details;
@@ -341,7 +341,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1060, 540);
+            this.tabPage2.Size = new System.Drawing.Size(1057, 541);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Khách hàng";
             // 
@@ -425,7 +425,8 @@
             this.lvKH.TabIndex = 0;
             this.lvKH.UseCompatibleStateImageBehavior = false;
             this.lvKH.View = System.Windows.Forms.View.Details;
-             // 
+            this.lvKH.SelectedIndexChanged += new System.EventHandler(this.lvKH_SelectedIndexChanged);
+            // 
             // columnHeader5
             // 
             this.columnHeader5.Text = "      Mã khách hàng";

@@ -21,5 +21,10 @@ namespace QuanLyNhaHang1
         {
 
         }
+
+        private void btnDangKy_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -36,14 +36,14 @@
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbbKh = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.lvHoaDon = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -61,6 +61,7 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.Silver;
             this.panel2.Controls.Add(this.btnThoat);
             this.panel2.Controls.Add(this.btnXoa);
             this.panel2.Controls.Add(this.btnSua);
@@ -68,7 +69,7 @@
             this.panel2.Controls.Add(this.dateTimePicker2);
             this.panel2.Controls.Add(this.dateTimePicker1);
             this.panel2.Controls.Add(this.comboBox2);
-            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.cbbKh);
             this.panel2.Controls.Add(this.textBox1);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
@@ -84,7 +85,7 @@
             // 
             this.btnThoat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnThoat.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThoat.Location = new System.Drawing.Point(932, 70);
+            this.btnThoat.Location = new System.Drawing.Point(949, 70);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(94, 33);
             this.btnThoat.TabIndex = 22;
@@ -94,7 +95,7 @@
             // btnXoa
             // 
             this.btnXoa.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.Location = new System.Drawing.Point(801, 70);
+            this.btnXoa.Location = new System.Drawing.Point(824, 70);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(94, 33);
             this.btnXoa.TabIndex = 21;
@@ -104,7 +105,7 @@
             // btnSua
             // 
             this.btnSua.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua.Location = new System.Drawing.Point(932, 13);
+            this.btnSua.Location = new System.Drawing.Point(949, 13);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(94, 33);
             this.btnSua.TabIndex = 20;
@@ -114,7 +115,7 @@
             // btnThem
             // 
             this.btnThem.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThem.Location = new System.Drawing.Point(801, 16);
+            this.btnThem.Location = new System.Drawing.Point(824, 13);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(94, 33);
             this.btnThem.TabIndex = 19;
@@ -147,13 +148,13 @@
             this.comboBox2.Size = new System.Drawing.Size(220, 24);
             this.comboBox2.TabIndex = 7;
             // 
-            // comboBox1
+            // cbbKh
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(130, 62);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(220, 24);
-            this.comboBox1.TabIndex = 6;
+            this.cbbKh.FormattingEnabled = true;
+            this.cbbKh.Location = new System.Drawing.Point(130, 62);
+            this.cbbKh.Name = "cbbKh";
+            this.cbbKh.Size = new System.Drawing.Size(220, 24);
+            this.cbbKh.TabIndex = 6;
             // 
             // textBox1
             // 
@@ -213,21 +214,22 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã hóa đơn";
             // 
-            // listView1
+            // lvHoaDon
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lvHoaDon.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4,
             this.columnHeader5});
-            this.listView1.GridLines = true;
-            this.listView1.Location = new System.Drawing.Point(12, 55);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(1047, 402);
-            this.listView1.TabIndex = 2;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.lvHoaDon.GridLines = true;
+            this.lvHoaDon.Location = new System.Drawing.Point(12, 56);
+            this.lvHoaDon.Name = "lvHoaDon";
+            this.lvHoaDon.Size = new System.Drawing.Size(1047, 401);
+            this.lvHoaDon.TabIndex = 2;
+            this.lvHoaDon.UseCompatibleStateImageBehavior = false;
+            this.lvHoaDon.View = System.Windows.Forms.View.Details;
+            this.lvHoaDon.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -260,20 +262,23 @@
             // 
             // txtTimKiem
             // 
-            this.txtTimKiem.Location = new System.Drawing.Point(889, 28);
+            this.txtTimKiem.Location = new System.Drawing.Point(889, 31);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(170, 22);
             this.txtTimKiem.TabIndex = 3;
             this.txtTimKiem.Text = "Tìm kiếm";
+            this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.Silver;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Location = new System.Drawing.Point(0, 28);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1071, 24);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // menuStrip2
             // 
@@ -311,9 +316,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(1071, 604);
             this.Controls.Add(this.txtTimKiem);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.lvHoaDon);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.menuStrip2);
@@ -321,6 +327,7 @@
             this.Name = "frHoaDon";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hóa đơn";
+            this.Load += new System.EventHandler(this.frHoaDon_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.menuStrip2.ResumeLayout(false);
@@ -333,7 +340,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView lvHoaDon;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
@@ -347,7 +354,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbbKh;
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnSua;
