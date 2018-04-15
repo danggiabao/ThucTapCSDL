@@ -124,19 +124,23 @@
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker2.Location = new System.Drawing.Point(502, 66);
+            this.dateTimePicker2.CustomFormat = "HH:mm";
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker2.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.dateTimePicker2.Location = new System.Drawing.Point(500, 66);
             this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.ShowUpDown = true;
             this.dateTimePicker2.Size = new System.Drawing.Size(250, 22);
             this.dateTimePicker2.TabIndex = 9;
-            this.dateTimePicker2.Value = new System.DateTime(2018, 3, 27, 18, 26, 0, 0);
+            this.dateTimePicker2.Value = new System.DateTime(2018, 4, 12, 0, 0, 0, 0);
+            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(502, 16);
+            this.dateTimePicker1.Location = new System.Drawing.Point(500, 19);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(250, 22);
+            this.dateTimePicker1.Size = new System.Drawing.Size(251, 22);
             this.dateTimePicker1.TabIndex = 8;
             this.dateTimePicker1.Value = new System.DateTime(2018, 3, 27, 0, 0, 0, 0);
             // 
@@ -222,6 +226,7 @@
             this.columnHeader3,
             this.columnHeader4,
             this.columnHeader5});
+            this.lvHoaDon.FullRowSelect = true;
             this.lvHoaDon.GridLines = true;
             this.lvHoaDon.Location = new System.Drawing.Point(12, 56);
             this.lvHoaDon.Name = "lvHoaDon";
@@ -267,6 +272,7 @@
             this.txtTimKiem.Size = new System.Drawing.Size(170, 22);
             this.txtTimKiem.TabIndex = 3;
             this.txtTimKiem.Text = "Tìm kiếm";
+            this.txtTimKiem.WordWrap = false;
             this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
             // 
             // menuStrip1

@@ -97,6 +97,7 @@
             this.Name = "frTrangchu2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chương trình quản lý nhà hàng";
+            this.Load += new System.EventHandler(this.frTrangchu2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -21,7 +21,7 @@ namespace QuanLyNhaHang1
         {
 
         }
-        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-4IRSTF4;Initial Catalog=QLNH2;Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-5LUMSRJ;Initial Catalog=QLNH2;Integrated Security=True");
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -36,17 +36,18 @@ namespace QuanLyNhaHang1
             conn.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from HOADON";
+            cmd.CommandText = "select MAHD,KHACHHANG.HOTEN,NGAYLAP,GIOTHANHTOAN,NHANVIEN.HOTEN from HOADON,KHACHHANG,NHANVIEN WHERE KHACHHANG.MAKH=HOADON.MAKH AND HOADON.MANV=NHANVIEN.MANV";
+            
             cmd.Connection = conn;
 
             SqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
                 ListViewItem liv = new ListViewItem(reader.GetString(0));
-                liv.SubItems.Add(reader.GetDateTime(1).ToString());
-                liv.SubItems.Add(reader.GetTimeSpan(2).ToString());
-                liv.SubItems.Add(reader.GetString(3));
-                liv.SubItems.Add(reader.GetInt32(4).ToString());            
+                liv.SubItems.Add(reader.GetString(1));
+                liv.SubItems.Add(reader.GetDateTime(2).ToString("dd/MM/yyyy"));
+                liv.SubItems.Add(reader.GetTimeSpan(3).ToString());
+                liv.SubItems.Add(reader.GetString(4));          
                 lvHoaDon.Items.Add(liv);
             }
             reader.Close();
@@ -69,6 +70,11 @@ namespace QuanLyNhaHang1
         {
             this.showHoaDon();
             this.showcbbKH();
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

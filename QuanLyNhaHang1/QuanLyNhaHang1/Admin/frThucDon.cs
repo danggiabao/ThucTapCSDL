@@ -17,7 +17,7 @@ namespace QuanLyNhaHang1
         {
             InitializeComponent();
         }
-        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-4IRSTF4;Initial Catalog=QLNH2;Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-5LUMSRJ;Initial Catalog=QLNH2;Integrated Security=True");
         private void btnXoa_Click(object sender, EventArgs e)
         {
 
@@ -27,7 +27,7 @@ namespace QuanLyNhaHang1
             conn.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from MONAN";
+            cmd.CommandText = "select MAMON,TENMON,DONGIA,TENNM from MONAN,NHOMMON WHERE MONAN.MANM=NHOMMON.MANM";
             cmd.Connection = conn;
 
             SqlDataReader reader = cmd.ExecuteReader();

@@ -17,7 +17,7 @@ namespace QuanLyNhaHang1
         {
             InitializeComponent();
         }
-        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-4IRSTF4;Initial Catalog=QLNH2;Integrated Security=True");
+       
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -44,6 +44,7 @@ namespace QuanLyNhaHang1
         {  
             try
             {
+                SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-5LUMSRJ;Initial Catalog=QLNH2;Integrated Security=True");
                 conn.Open();
                 string tk = txbUsername.Text;
                 string mk = txbPassword.Text;

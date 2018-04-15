@@ -47,24 +47,24 @@
             this.btnExit = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.btnDangKy = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
+            this.btnDangKy = new System.Windows.Forms.Button();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -255,6 +255,17 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(1057, 567);
             this.panel6.TabIndex = 10;
+            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(436, 21);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(279, 24);
+            this.label10.TabIndex = 9;
+            this.label10.Text = "Cập nhật thông tin tài khoản";
             // 
             // tabControl1
             // 
@@ -311,79 +322,49 @@
             this.panel7.Size = new System.Drawing.Size(1057, 567);
             this.panel7.TabIndex = 0;
             // 
-            // label5
+            // btnHuy
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(415, 55);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(139, 24);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Tạo tài khoản";
+            this.btnHuy.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHuy.Location = new System.Drawing.Point(618, 490);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(101, 41);
+            this.btnHuy.TabIndex = 12;
+            this.btnHuy.Text = "Hủy bỏ";
+            this.btnHuy.UseVisualStyleBackColor = true;
             // 
-            // label6
+            // btnDangKy
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(239, 143);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(114, 18);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Tên đăng nhập";
+            this.btnDangKy.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDangKy.Location = new System.Drawing.Point(431, 490);
+            this.btnDangKy.Name = "btnDangKy";
+            this.btnDangKy.Size = new System.Drawing.Size(101, 41);
+            this.btnDangKy.TabIndex = 11;
+            this.btnDangKy.Text = "Đăng ký";
+            this.btnDangKy.UseVisualStyleBackColor = true;
+            this.btnDangKy.Click += new System.EventHandler(this.btnDangKy_Click);
             // 
-            // label7
+            // textBox7
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(239, 216);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(72, 18);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "Mật khẩu";
+            this.textBox7.Location = new System.Drawing.Point(431, 139);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(288, 22);
+            this.textBox7.TabIndex = 5;
             // 
-            // label8
+            // textBox6
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(239, 287);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(132, 18);
-            this.label8.TabIndex = 3;
-            this.label8.Text = "Nhập lại mật khẩu";
+            this.textBox6.Location = new System.Drawing.Point(431, 214);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(288, 22);
+            this.textBox6.TabIndex = 6;
+            this.textBox6.UseSystemPasswordChar = true;
             // 
-            // label9
+            // textBox5
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(239, 362);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(91, 18);
-            this.label9.TabIndex = 4;
-            this.label9.Text = "Phân quyền";
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(431, 362);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(92, 22);
-            this.radioButton1.TabIndex = 8;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "1 - Admin";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(431, 402);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(122, 22);
-            this.radioButton2.TabIndex = 9;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "2 - Nhân viên";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.textBox5.Location = new System.Drawing.Point(431, 283);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(288, 22);
+            this.textBox5.TabIndex = 7;
+            this.textBox5.UseSystemPasswordChar = true;
             // 
             // radioButton3
             // 
@@ -397,59 +378,79 @@
             this.radioButton3.Text = "3 - Kế toán";
             this.radioButton3.UseVisualStyleBackColor = true;
             // 
-            // textBox5
+            // radioButton2
             // 
-            this.textBox5.Location = new System.Drawing.Point(431, 283);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(288, 22);
-            this.textBox5.TabIndex = 7;
-            this.textBox5.UseSystemPasswordChar = true;
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton2.Location = new System.Drawing.Point(431, 402);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(122, 22);
+            this.radioButton2.TabIndex = 9;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "2 - Nhân viên";
+            this.radioButton2.UseVisualStyleBackColor = true;
             // 
-            // textBox6
+            // radioButton1
             // 
-            this.textBox6.Location = new System.Drawing.Point(431, 214);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(288, 22);
-            this.textBox6.TabIndex = 6;
-            this.textBox6.UseSystemPasswordChar = true;
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton1.Location = new System.Drawing.Point(431, 362);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(92, 22);
+            this.radioButton1.TabIndex = 8;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "1 - Admin";
+            this.radioButton1.UseVisualStyleBackColor = true;
             // 
-            // textBox7
+            // label9
             // 
-            this.textBox7.Location = new System.Drawing.Point(431, 139);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(288, 22);
-            this.textBox7.TabIndex = 5;
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(239, 362);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(91, 18);
+            this.label9.TabIndex = 4;
+            this.label9.Text = "Phân quyền";
             // 
-            // label10
+            // label8
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(436, 21);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(279, 24);
-            this.label10.TabIndex = 9;
-            this.label10.Text = "Cập nhật thông tin tài khoản";
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(239, 287);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(132, 18);
+            this.label8.TabIndex = 3;
+            this.label8.Text = "Nhập lại mật khẩu";
             // 
-            // btnDangKy
+            // label7
             // 
-            this.btnDangKy.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDangKy.Location = new System.Drawing.Point(431, 490);
-            this.btnDangKy.Name = "btnDangKy";
-            this.btnDangKy.Size = new System.Drawing.Size(101, 41);
-            this.btnDangKy.TabIndex = 11;
-            this.btnDangKy.Text = "Đăng ký";
-            this.btnDangKy.UseVisualStyleBackColor = true;
-            this.btnDangKy.Click += new System.EventHandler(this.btnDangKy_Click);
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(239, 216);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(72, 18);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "Mật khẩu";
             // 
-            // btnHuy
+            // label6
             // 
-            this.btnHuy.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHuy.Location = new System.Drawing.Point(618, 490);
-            this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(101, 41);
-            this.btnHuy.TabIndex = 12;
-            this.btnHuy.Text = "Hủy bỏ";
-            this.btnHuy.UseVisualStyleBackColor = true;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(239, 143);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(114, 18);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "Tên đăng nhập";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(415, 55);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(139, 24);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Tạo tài khoản";
             // 
             // frTaiKhoan
             // 

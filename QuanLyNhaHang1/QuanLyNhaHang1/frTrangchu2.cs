@@ -32,5 +32,10 @@ namespace QuanLyNhaHang1
             f.ShowDialog();
             this.Show();
         }
+
+        private void frTrangchu2_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

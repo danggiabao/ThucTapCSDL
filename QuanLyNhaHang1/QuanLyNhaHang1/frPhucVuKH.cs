@@ -18,7 +18,7 @@ namespace QuanLyNhaHang1
             InitializeComponent();
            
         }
-        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-4IRSTF4;Initial Catalog=QLNH2;Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-5LUMSRJ;Initial Catalog=QLNH2;Integrated Security=True");
         public void showcbb()
         {
             SqlDataAdapter da = new SqlDataAdapter("Select TENMON From MONAN", conn);
@@ -92,6 +92,11 @@ namespace QuanLyNhaHang1
         }
 
         private void lvKH_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
         }

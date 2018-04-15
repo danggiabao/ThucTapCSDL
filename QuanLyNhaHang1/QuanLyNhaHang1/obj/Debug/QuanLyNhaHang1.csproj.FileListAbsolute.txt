@@ -37,3 +37,21 @@ C:\Users\dangt\Desktop\Git\ThucTapCSDL\QuanLyNhaHang1\QuanLyNhaHang1\obj\Debug\Q
 C:\Users\dangt\Desktop\Git\ThucTapCSDL\QuanLyNhaHang1\QuanLyNhaHang1\obj\Debug\QuanLyNhaHang1.csproj.CoreCompileInputs.cache
 C:\Users\dangt\Desktop\Git\ThucTapCSDL\QuanLyNhaHang1\QuanLyNhaHang1\obj\Debug\QuanLyNhaHang1.exe
 C:\Users\dangt\Desktop\Git\ThucTapCSDL\QuanLyNhaHang1\QuanLyNhaHang1\obj\Debug\QuanLyNhaHang1.pdb
+C:\Users\Hung Ngo\Desktop\git-qLNH\ThucTapCSDL\QuanLyNhaHang1\QuanLyNhaHang1\bin\Debug\QuanLyNhaHang1.exe.config
+C:\Users\Hung Ngo\Desktop\git-qLNH\ThucTapCSDL\QuanLyNhaHang1\QuanLyNhaHang1\obj\Debug\QuanLyNhaHang1.exe
+C:\Users\Hung Ngo\Desktop\git-qLNH\ThucTapCSDL\QuanLyNhaHang1\QuanLyNhaHang1\obj\Debug\QuanLyNhaHang1.pdb
+C:\Users\Hung Ngo\Desktop\git-qLNH\ThucTapCSDL\QuanLyNhaHang1\QuanLyNhaHang1\bin\Debug\QuanLyNhaHang1.exe
+C:\Users\Hung Ngo\Desktop\git-qLNH\ThucTapCSDL\QuanLyNhaHang1\QuanLyNhaHang1\bin\Debug\QuanLyNhaHang1.pdb
+C:\Users\Hung Ngo\Desktop\git-qLNH\ThucTapCSDL\QuanLyNhaHang1\QuanLyNhaHang1\obj\Debug\QuanLyNhaHang1.csprojResolveAssemblyReference.cache
+C:\Users\Hung Ngo\Desktop\git-qLNH\ThucTapCSDL\QuanLyNhaHang1\QuanLyNhaHang1\obj\Debug\QuanLyNhaHang1.frNhanvien.resources
+C:\Users\Hung Ngo\Desktop\git-qLNH\ThucTapCSDL\QuanLyNhaHang1\QuanLyNhaHang1\obj\Debug\QuanLyNhaHang1.frHoaDon.resources
+C:\Users\Hung Ngo\Desktop\git-qLNH\ThucTapCSDL\QuanLyNhaHang1\QuanLyNhaHang1\obj\Debug\QuanLyNhaHang1.frLogin.resources
+C:\Users\Hung Ngo\Desktop\git-qLNH\ThucTapCSDL\QuanLyNhaHang1\QuanLyNhaHang1\obj\Debug\QuanLyNhaHang1.frTrangChu.resources
+C:\Users\Hung Ngo\Desktop\git-qLNH\ThucTapCSDL\QuanLyNhaHang1\QuanLyNhaHang1\obj\Debug\QuanLyNhaHang1.frThucDon.resources
+C:\Users\Hung Ngo\Desktop\git-qLNH\ThucTapCSDL\QuanLyNhaHang1\QuanLyNhaHang1\obj\Debug\QuanLyNhaHang1.frThongKe.resources
+C:\Users\Hung Ngo\Desktop\git-qLNH\ThucTapCSDL\QuanLyNhaHang1\QuanLyNhaHang1\obj\Debug\QuanLyNhaHang1.frTaiKhoan.resources
+C:\Users\Hung Ngo\Desktop\git-qLNH\ThucTapCSDL\QuanLyNhaHang1\QuanLyNhaHang1\obj\Debug\QuanLyNhaHang1.frPhucVuKH.resources
+C:\Users\Hung Ngo\Desktop\git-qLNH\ThucTapCSDL\QuanLyNhaHang1\QuanLyNhaHang1\obj\Debug\QuanLyNhaHang1.frTrangchu1.resources
+C:\Users\Hung Ngo\Desktop\git-qLNH\ThucTapCSDL\QuanLyNhaHang1\QuanLyNhaHang1\obj\Debug\QuanLyNhaHang1.frTrangchu2.resources
+C:\Users\Hung Ngo\Desktop\git-qLNH\ThucTapCSDL\QuanLyNhaHang1\QuanLyNhaHang1\obj\Debug\QuanLyNhaHang1.Properties.Resources.resources
+C:\Users\Hung Ngo\Desktop\git-qLNH\ThucTapCSDL\QuanLyNhaHang1\QuanLyNhaHang1\obj\Debug\QuanLyNhaHang1.csproj.GenerateResource.Cache

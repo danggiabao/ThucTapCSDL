@@ -17,7 +17,7 @@ namespace QuanLyNhaHang1
         {
             InitializeComponent();
         }
-        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-4IRSTF4;Initial Catalog=QLNH2;Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-5LUMSRJ;Initial Catalog=QLNH2;Integrated Security=True");
         private void searchBox_TextChanged(object sender, EventArgs e)
         {
 
@@ -41,7 +41,7 @@ namespace QuanLyNhaHang1
                 ListViewItem liv = new ListViewItem(reader.GetString(0));
                 liv.SubItems.Add(reader.GetString(1));
                 liv.SubItems.Add(reader.GetString(2));
-                liv.SubItems.Add(reader.GetDateTime(3).ToString());
+                liv.SubItems.Add(reader.GetDateTime(3).ToString("dd/MM/yyyy"));
                 liv.SubItems.Add(reader.GetString(4));
                 lvNV.Items.Add(liv);
             }

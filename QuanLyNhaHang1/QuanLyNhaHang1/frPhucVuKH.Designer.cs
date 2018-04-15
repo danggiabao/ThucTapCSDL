@@ -87,6 +87,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(1071, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // fileToolStripMenuItem
             // 
@@ -297,6 +298,7 @@
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4});
+            this.lvPhucVu.FullRowSelect = true;
             this.lvPhucVu.Location = new System.Drawing.Point(3, 87);
             this.lvPhucVu.Name = "lvPhucVu";
             this.lvPhucVu.Size = new System.Drawing.Size(1051, 363);
