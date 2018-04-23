@@ -16,19 +16,20 @@ namespace QuanLyNhaHang1
         public frThucDon()
         {
             InitializeComponent();
+            searchbox1.ForeColor = Color.LightGray;
+            searchbox1.Text = "Tìm kiếm";
+            this.searchbox1.Leave += new System.EventHandler(this.searchbox1_Leave);
+            this.searchbox1.Enter += new System.EventHandler(this.searchbox1_Enter);
         }
-        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-5LUMSRJ;Initial Catalog=QLNH2;Integrated Security=True");
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-
-        }
+        DataConnections con = new DataConnections();
+        #region ShowInList
         public void Showlist()
         {
-            conn.Open();
+            con.OpenConnection();
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "select MAMON,TENMON,DONGIA,TENNM from MONAN,NHOMMON WHERE MONAN.MANM=NHOMMON.MANM";
-            cmd.Connection = conn;
+            cmd.Connection = con.conn;
 
             SqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
@@ -43,12 +44,11 @@ namespace QuanLyNhaHang1
         }
 
         public void ShowlistNM()
-        {
-           
+        {         
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "select * from NHOMMON";
-            cmd.Connection = conn;
+            cmd.Connection = con.conn;
 
             SqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
@@ -60,30 +60,41 @@ namespace QuanLyNhaHang1
             reader.Close();
         }
 
+        public void showcbbNM()
+        {
+            SqlDataAdapter da = new SqlDataAdapter("Select TENNM From NHOMMON", con.conn);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            cbbNM.DataSource = dt;
+            cbbNM.DisplayMember = "TENNM";
+            cbbNM.ValueMember = "TENNM";
+        }
         private void frThucDon_Load(object sender, EventArgs e)
         {
             this.Showlist();
             this.ShowlistNM();
+            this.showcbbNM();
         }
-
-        private void label4_Click(object sender, EventArgs e)
+        #endregion
+        #region TimKiem
+        private void searchbox1_Leave(object sender, EventArgs e)
         {
-
+            if (searchbox1.Text == "")
+            {
+                searchbox1.Text = "Tìm kiếm";
+                searchbox1.ForeColor = Color.Gray;
+            }
         }
-        
-        private void lvThucDon_SelectedIndexChanged(object sender, EventArgs e)
+
+        private void searchbox1_Enter(object sender, EventArgs e)
         {
-
+            if (searchbox1.Text == "Tìm kiếm")
+            {
+                searchbox1.Text = "";
+                searchbox1.ForeColor = Color.Black;
+            }
         }
+        #endregion
 
-        private void lvNhomMon_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

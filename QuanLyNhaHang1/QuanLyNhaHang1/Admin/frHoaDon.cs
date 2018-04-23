@@ -15,30 +15,20 @@ namespace QuanLyNhaHang1
         public frHoaDon()
         {
             InitializeComponent();
+            txtTimKiem.ForeColor = Color.LightGray;
+            txtTimKiem.Text = "Tìm kiếm";
+            this.txtTimKiem.Leave += new System.EventHandler(this.txtTimKiem_Leave);
+            this.txtTimKiem.Enter += new System.EventHandler(this.txtTimKiem_Enter);
         }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-5LUMSRJ;Initial Catalog=QLNH2;Integrated Security=True");
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtTimKiem_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        DataConnections con = new DataConnections();
+        #region ShowToListview
         public void showHoaDon()
         {
-            conn.Open();
+            con.OpenConnection();
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select MAHD,KHACHHANG.HOTEN,NGAYLAP,GIOTHANHTOAN,NHANVIEN.HOTEN from HOADON,KHACHHANG,NHANVIEN WHERE KHACHHANG.MAKH=HOADON.MAKH AND HOADON.MANV=NHANVIEN.MANV";
-            
-            cmd.Connection = conn;
+            cmd.CommandText = "select MAHD,KHACHHANG.HOTEN,NGAYLAP,GIOTHANHTOAN,NHANVIEN.HOTEN from HOADON,KHACHHANG,NHANVIEN WHERE KHACHHANG.MAKH=HOADON.MAKH AND HOADON.MANV=NHANVIEN.MANV";           
+            cmd.Connection = con.conn;
 
             SqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
@@ -52,29 +42,51 @@ namespace QuanLyNhaHang1
             }
             reader.Close();
         }
+        #endregion
+        #region LoadData
         public void showcbbKH()
         {
-            SqlDataAdapter da = new SqlDataAdapter("Select HOTEN From KHACHHANG", conn);
+            SqlDataAdapter da = new SqlDataAdapter("Select HOTEN From KHACHHANG", con.conn);
             DataTable dt = new DataTable();
             da.Fill(dt);
             cbbKh.DataSource = dt;
             cbbKh.DisplayMember = "HOTEN";
             cbbKh.ValueMember = "HOTEN";
         }
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        public void showcbbNV()
         {
-
+            SqlDataAdapter da = new SqlDataAdapter("Select HOTEN From NHANVIEN", con.conn);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            cbbNV.DataSource = dt;
+            cbbNV.DisplayMember = "HOTEN";
+            cbbNV.ValueMember = "HOTEN";
         }
-
         private void frHoaDon_Load(object sender, EventArgs e)
         {
             this.showHoaDon();
             this.showcbbKH();
+            this.showcbbNV();
+        }
+        #endregion
+        #region TimKiem
+        private void txtTimKiem_Leave(object sender, EventArgs e)
+        {
+            if (txtTimKiem.Text == "")
+            {
+                txtTimKiem.Text = "Tìm kiếm";
+                txtTimKiem.ForeColor = Color.Gray;
+            }
         }
 
-        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        private void txtTimKiem_Enter(object sender, EventArgs e)
         {
-            
+            if (txtTimKiem.Text == "Tìm kiếm")
+            {
+                txtTimKiem.Text = "";
+                txtTimKiem.ForeColor = Color.Black;
+            }
         }
+        #endregion
     }
 }

@@ -35,7 +35,7 @@
             this.btnThem = new System.Windows.Forms.Button();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbbNV = new System.Windows.Forms.ComboBox();
             this.cbbKh = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -50,25 +50,20 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.txtTimKiem = new System.Windows.Forms.TextBox();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.menuStrip2 = new System.Windows.Forms.MenuStrip();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
-            this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.Silver;
+            this.panel2.BackColor = System.Drawing.Color.CornflowerBlue;
             this.panel2.Controls.Add(this.btnThoat);
             this.panel2.Controls.Add(this.btnXoa);
             this.panel2.Controls.Add(this.btnSua);
             this.panel2.Controls.Add(this.btnThem);
             this.panel2.Controls.Add(this.dateTimePicker2);
             this.panel2.Controls.Add(this.dateTimePicker1);
-            this.panel2.Controls.Add(this.comboBox2);
+            this.panel2.Controls.Add(this.cbbNV);
             this.panel2.Controls.Add(this.cbbKh);
             this.panel2.Controls.Add(this.textBox1);
             this.panel2.Controls.Add(this.label5);
@@ -76,9 +71,9 @@
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(12, 463);
+            this.panel2.Location = new System.Drawing.Point(4, 439);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1047, 139);
+            this.panel2.Size = new System.Drawing.Size(1064, 163);
             this.panel2.TabIndex = 1;
             // 
             // btnThoat
@@ -133,7 +128,6 @@
             this.dateTimePicker2.Size = new System.Drawing.Size(250, 22);
             this.dateTimePicker2.TabIndex = 9;
             this.dateTimePicker2.Value = new System.DateTime(2018, 4, 12, 0, 0, 0, 0);
-            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
             // dateTimePicker1
             // 
@@ -144,13 +138,13 @@
             this.dateTimePicker1.TabIndex = 8;
             this.dateTimePicker1.Value = new System.DateTime(2018, 3, 27, 0, 0, 0, 0);
             // 
-            // comboBox2
+            // cbbNV
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(130, 105);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(220, 24);
-            this.comboBox2.TabIndex = 7;
+            this.cbbNV.FormattingEnabled = true;
+            this.cbbNV.Location = new System.Drawing.Point(130, 105);
+            this.cbbNV.Name = "cbbNV";
+            this.cbbNV.Size = new System.Drawing.Size(220, 24);
+            this.cbbNV.TabIndex = 7;
             // 
             // cbbKh
             // 
@@ -176,7 +170,6 @@
             this.label5.Size = new System.Drawing.Size(80, 18);
             this.label5.TabIndex = 4;
             this.label5.Text = "Nhân viên";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label4
             // 
@@ -228,13 +221,12 @@
             this.columnHeader5});
             this.lvHoaDon.FullRowSelect = true;
             this.lvHoaDon.GridLines = true;
-            this.lvHoaDon.Location = new System.Drawing.Point(12, 56);
+            this.lvHoaDon.Location = new System.Drawing.Point(4, 35);
             this.lvHoaDon.Name = "lvHoaDon";
-            this.lvHoaDon.Size = new System.Drawing.Size(1047, 401);
+            this.lvHoaDon.Size = new System.Drawing.Size(1064, 398);
             this.lvHoaDon.TabIndex = 2;
             this.lvHoaDon.UseCompatibleStateImageBehavior = false;
             this.lvHoaDon.View = System.Windows.Forms.View.Details;
-            this.lvHoaDon.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -267,77 +259,41 @@
             // 
             // txtTimKiem
             // 
-            this.txtTimKiem.Location = new System.Drawing.Point(889, 31);
+            this.txtTimKiem.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txtTimKiem.Location = new System.Drawing.Point(873, 7);
             this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(170, 22);
+            this.txtTimKiem.Size = new System.Drawing.Size(195, 22);
             this.txtTimKiem.TabIndex = 3;
-            this.txtTimKiem.Text = "Tìm kiếm";
-            this.txtTimKiem.WordWrap = false;
-            this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
+            this.txtTimKiem.Enter += new System.EventHandler(this.txtTimKiem_Enter);
+            this.txtTimKiem.Leave += new System.EventHandler(this.txtTimKiem_Leave);
             // 
-            // menuStrip1
+            // label6
             // 
-            this.menuStrip1.BackColor = System.Drawing.Color.Silver;
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Location = new System.Drawing.Point(0, 28);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1071, 24);
-            this.menuStrip1.TabIndex = 4;
-            this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
-            // 
-            // menuStrip2
-            // 
-            this.menuStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
-            this.menuStrip2.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(1071, 28);
-            this.menuStrip2.TabIndex = 5;
-            this.menuStrip2.Text = "menuStrip2";
-            // 
-            // fileToolStripMenuItem
-            // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.saveToolStripMenuItem,
-            this.exitToolStripMenuItem});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(44, 24);
-            this.fileToolStripMenuItem.Text = "File";
-            // 
-            // saveToolStripMenuItem
-            // 
-            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(115, 26);
-            this.saveToolStripMenuItem.Text = "Save";
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(115, 26);
-            this.exitToolStripMenuItem.Text = "Exit";
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label6.Location = new System.Drawing.Point(7, 8);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(144, 18);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Thông tin hóa đơn";
             // 
             // frHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Silver;
+            this.BackColor = System.Drawing.Color.CornflowerBlue;
             this.ClientSize = new System.Drawing.Size(1071, 604);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.lvHoaDon);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.menuStrip2);
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "frHoaDon";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hóa đơn";
             this.Load += new System.EventHandler(this.frHoaDon_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.menuStrip2.ResumeLayout(false);
-            this.menuStrip2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -359,7 +315,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtTimKiem;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cbbNV;
         private System.Windows.Forms.ComboBox cbbKh;
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Button btnXoa;
@@ -367,10 +323,6 @@
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.MenuStrip menuStrip2;
-        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.Label label6;
     }
 }

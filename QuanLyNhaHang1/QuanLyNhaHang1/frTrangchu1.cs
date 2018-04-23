@@ -40,5 +40,29 @@ namespace QuanLyNhaHang1
             f.ShowDialog();
             this.Show();
         }
+
+        private void btnKhachHang_Click_1(object sender, EventArgs e)
+        {
+            frPhucVuKH f = new frPhucVuKH();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
+
+        private void btn_Click(object sender, EventArgs e)
+        {
+            frThucDon f = new frThucDon();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
+
+        private void btnThanhToan_Click_1(object sender, EventArgs e)
+        {
+            frHoaDon f = new frHoaDon();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
     }
 }

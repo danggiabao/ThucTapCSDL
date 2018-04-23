@@ -16,20 +16,5 @@ namespace QuanLyNhaHang1
         {
             InitializeComponent();
         }
-
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnDangKy_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel6_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }

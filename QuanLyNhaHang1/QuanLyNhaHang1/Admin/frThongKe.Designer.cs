@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem(new string[] {
             ""}, -1, System.Drawing.Color.Empty, System.Drawing.SystemColors.ControlLightLight, null);
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -41,8 +41,6 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mónĂnĐượcSửDụngNhiềuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mónĂnĐượcDùngNhiềuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hóaĐơnThanhToánToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hóaĐơnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnWord = new System.Windows.Forms.Button();
             this.btnExcel = new System.Windows.Forms.Button();
@@ -53,21 +51,21 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(318, 28);
+            this.label1.Font = new System.Drawing.Font("Courier New", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.label1.Location = new System.Drawing.Point(390, 37);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(422, 29);
+            this.label1.Size = new System.Drawing.Size(264, 27);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Thống kê món ăn được dùng nhiều";
+            this.label1.Text = "Thống kê doanh thu";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.listView1);
-            this.panel1.Location = new System.Drawing.Point(1, 76);
+            this.panel1.Location = new System.Drawing.Point(0, 76);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1070, 417);
+            this.panel1.Size = new System.Drawing.Size(1083, 417);
             this.panel1.TabIndex = 2;
             // 
             // listView1
@@ -81,10 +79,10 @@
             this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem2});
+            listViewItem5});
             this.listView1.Location = new System.Drawing.Point(0, 0);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(1070, 417);
+            this.listView1.Size = new System.Drawing.Size(1083, 417);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -113,6 +111,7 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
@@ -120,7 +119,7 @@
             this.hóaĐơnToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1071, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1083, 28);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -135,29 +134,15 @@
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(115, 26);
+            this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(165, 26);
             this.saveToolStripMenuItem.Text = "Save";
             // 
             // mónĂnĐượcSửDụngNhiềuToolStripMenuItem
             // 
-            this.mónĂnĐượcSửDụngNhiềuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mónĂnĐượcDùngNhiềuToolStripMenuItem,
-            this.hóaĐơnThanhToánToolStripMenuItem});
             this.mónĂnĐượcSửDụngNhiềuToolStripMenuItem.Name = "mónĂnĐượcSửDụngNhiềuToolStripMenuItem";
             this.mónĂnĐượcSửDụngNhiềuToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
             this.mónĂnĐượcSửDụngNhiềuToolStripMenuItem.Text = "View";
-            // 
-            // mónĂnĐượcDùngNhiềuToolStripMenuItem
-            // 
-            this.mónĂnĐượcDùngNhiềuToolStripMenuItem.Name = "mónĂnĐượcDùngNhiềuToolStripMenuItem";
-            this.mónĂnĐượcDùngNhiềuToolStripMenuItem.Size = new System.Drawing.Size(250, 26);
-            this.mónĂnĐượcDùngNhiềuToolStripMenuItem.Text = "Món ăn được dùng nhiều";
-            // 
-            // hóaĐơnThanhToánToolStripMenuItem
-            // 
-            this.hóaĐơnThanhToánToolStripMenuItem.Name = "hóaĐơnThanhToánToolStripMenuItem";
-            this.hóaĐơnThanhToánToolStripMenuItem.Size = new System.Drawing.Size(250, 26);
-            this.hóaĐơnThanhToánToolStripMenuItem.Text = "Hóa đơn thanh toán";
             // 
             // hóaĐơnToolStripMenuItem
             // 
@@ -168,29 +153,34 @@
             // 
             // btnWord
             // 
-            this.btnWord.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnWord.Font = new System.Drawing.Font("Courier New", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnWord.Image = global::QuanLyNhaHang1.Properties.Resources.excel;
-            this.btnWord.Location = new System.Drawing.Point(597, 518);
+            this.btnWord.Location = new System.Drawing.Point(565, 508);
             this.btnWord.Name = "btnWord";
-            this.btnWord.Size = new System.Drawing.Size(64, 64);
-            this.btnWord.TabIndex = 5;
+            this.btnWord.Size = new System.Drawing.Size(160, 84);
+            this.btnWord.TabIndex = 2;
+            this.btnWord.Text = "Excel";
+            this.btnWord.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnWord.UseVisualStyleBackColor = true;
             // 
             // btnExcel
             // 
-            this.btnExcel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcel.Font = new System.Drawing.Font("Courier New", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExcel.Image = global::QuanLyNhaHang1.Properties.Resources.word__1_;
-            this.btnExcel.Location = new System.Drawing.Point(407, 518);
+            this.btnExcel.Location = new System.Drawing.Point(355, 508);
             this.btnExcel.Name = "btnExcel";
-            this.btnExcel.Size = new System.Drawing.Size(64, 64);
-            this.btnExcel.TabIndex = 4;
+            this.btnExcel.Size = new System.Drawing.Size(160, 84);
+            this.btnExcel.TabIndex = 1;
+            this.btnExcel.Text = "Word";
+            this.btnExcel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnExcel.UseVisualStyleBackColor = true;
             // 
             // frThongKe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1071, 604);
+            this.BackColor = System.Drawing.Color.DodgerBlue;
+            this.ClientSize = new System.Drawing.Size(1083, 604);
             this.Controls.Add(this.btnWord);
             this.Controls.Add(this.btnExcel);
             this.Controls.Add(this.panel1);
@@ -221,8 +211,6 @@
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mónĂnĐượcSửDụngNhiềuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hóaĐơnToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem mónĂnĐượcDùngNhiềuToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem hóaĐơnThanhToánToolStripMenuItem;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.Button btnExcel;
         private System.Windows.Forms.Button btnWord;

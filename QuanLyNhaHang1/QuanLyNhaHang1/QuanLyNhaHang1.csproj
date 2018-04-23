@@ -57,10 +57,11 @@
     <Compile Include="Admin\frHoaDon.Designer.cs">
       <DependentUpon>frHoaDon.cs</DependentUpon>
     </Compile>
-    <Compile Include="frLogin.cs">
+    <Compile Include="DataConnections.cs" />
+    <Compile Include="Login\frLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frLogin.Designer.cs">
+    <Compile Include="Login\frLogin.Designer.cs">
       <DependentUpon>frLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Admin\frTrangChu.cs">
@@ -81,17 +82,23 @@
     <Compile Include="Admin\frThongKe.Designer.cs">
       <DependentUpon>frThongKe.cs</DependentUpon>
     </Compile>
+    <Compile Include="Login\frmTaoTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\frmTaoTaiKhoan.Designer.cs">
+      <DependentUpon>frmTaoTaiKhoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\frPhucVuKH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\frPhucVuKH.Designer.cs">
+      <DependentUpon>frPhucVuKH.cs</DependentUpon>
+    </Compile>
     <Compile Include="Admin\frTaiKhoan.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Admin\frTaiKhoan.Designer.cs">
       <DependentUpon>frTaiKhoan.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frPhucVuKH.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frPhucVuKH.Designer.cs">
-      <DependentUpon>frPhucVuKH.cs</DependentUpon>
     </Compile>
     <Compile Include="frTrangchu1.cs">
       <SubType>Form</SubType>
@@ -113,7 +120,7 @@
     <EmbeddedResource Include="Admin\frHoaDon.resx">
       <DependentUpon>frHoaDon.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frLogin.resx">
+    <EmbeddedResource Include="Login\frLogin.resx">
       <DependentUpon>frLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\frTrangChu.resx">
@@ -125,11 +132,14 @@
     <EmbeddedResource Include="Admin\frThongKe.resx">
       <DependentUpon>frThongKe.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Login\frmTaoTaiKhoan.resx">
+      <DependentUpon>frmTaoTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\frPhucVuKH.resx">
+      <DependentUpon>frPhucVuKH.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin\frTaiKhoan.resx">
       <DependentUpon>frTaiKhoan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frPhucVuKH.resx">
-      <DependentUpon>frPhucVuKH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frTrangchu1.resx">
       <DependentUpon>frTrangchu1.cs</DependentUpon>
@@ -174,6 +184,36 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Background\people.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Background\Restaurant-Empire-2-1-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Background\hamburger-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Background\icons8-transaction-list-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Background\icons8-conference-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Background\icons8-account-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Background\icons8-padlock-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Background\icons8-security-lock-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Background\Login-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Background\icons8-delete-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Background\icons8-password-1-50.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

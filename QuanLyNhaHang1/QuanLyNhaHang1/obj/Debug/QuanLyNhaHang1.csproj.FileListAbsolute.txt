@@ -55,3 +55,4 @@ C:\Users\Hung Ngo\Desktop\git-qLNH\ThucTapCSDL\QuanLyNhaHang1\QuanLyNhaHang1\obj
 C:\Users\Hung Ngo\Desktop\git-qLNH\ThucTapCSDL\QuanLyNhaHang1\QuanLyNhaHang1\obj\Debug\QuanLyNhaHang1.frTrangchu2.resources
 C:\Users\Hung Ngo\Desktop\git-qLNH\ThucTapCSDL\QuanLyNhaHang1\QuanLyNhaHang1\obj\Debug\QuanLyNhaHang1.Properties.Resources.resources
 C:\Users\Hung Ngo\Desktop\git-qLNH\ThucTapCSDL\QuanLyNhaHang1\QuanLyNhaHang1\obj\Debug\QuanLyNhaHang1.csproj.GenerateResource.Cache
+C:\Users\dangt\Desktop\Git\ThucTapCSDL\QuanLyNhaHang1\QuanLyNhaHang1\obj\Debug\QuanLyNhaHang1.frmTaoTaiKhoan.resources

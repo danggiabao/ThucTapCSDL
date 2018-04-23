@@ -87,8 +87,6 @@
             this.menuStrip1.Size = new System.Drawing.Size(1071, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
-            // 
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -136,7 +134,6 @@
             this.tabPage1.Size = new System.Drawing.Size(1057, 541);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Đặt món";
-            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // panel3
             // 
@@ -209,7 +206,6 @@
             this.cbbKH.Size = new System.Drawing.Size(237, 24);
             this.cbbKH.Sorted = true;
             this.cbbKH.TabIndex = 7;
-            this.cbbKH.SelectedIndexChanged += new System.EventHandler(this.cbbKH_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -305,7 +301,6 @@
             this.lvPhucVu.TabIndex = 4;
             this.lvPhucVu.UseCompatibleStateImageBehavior = false;
             this.lvPhucVu.View = System.Windows.Forms.View.Details;
-            this.lvPhucVu.SelectedIndexChanged += new System.EventHandler(this.lvPhucVu_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -427,7 +422,6 @@
             this.lvKH.TabIndex = 0;
             this.lvKH.UseCompatibleStateImageBehavior = false;
             this.lvKH.View = System.Windows.Forms.View.Details;
-            this.lvKH.SelectedIndexChanged += new System.EventHandler(this.lvKH_SelectedIndexChanged);
             // 
             // columnHeader5
             // 

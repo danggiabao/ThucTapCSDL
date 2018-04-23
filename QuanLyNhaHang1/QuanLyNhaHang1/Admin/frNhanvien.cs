@@ -16,8 +16,12 @@ namespace QuanLyNhaHang1
         public frNhanvien()
         {
             InitializeComponent();
+            searchBox.ForeColor = Color.LightGray;
+            searchBox.Text = "Tìm kiếm";
+            this.searchBox.Leave += new System.EventHandler(this.searchBox_Leave);
+            this.searchBox.Enter += new System.EventHandler(this.searchBox_Enter);
         }
-        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-5LUMSRJ;Initial Catalog=QLNH2;Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-4IRSTF4;Initial Catalog=QLNH2;Integrated Security=True");
         private void searchBox_TextChanged(object sender, EventArgs e)
         {
 
@@ -56,6 +60,29 @@ namespace QuanLyNhaHang1
         private void frNhanvien_Load(object sender, EventArgs e)
         {
             this.Showlv();
+        }
+
+        private void searchBox_DragLeave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void searchBox_Leave(object sender, EventArgs e)
+        {
+            if (searchBox.Text == "")
+            {
+                searchBox.Text = "Tìm kiếm";
+                searchBox.ForeColor = Color.Gray;
+            }
+        }
+
+        private void searchBox_Enter(object sender, EventArgs e)
+        {
+            if (searchBox.Text == "Tìm kiếm")
+            {
+                searchBox.Text = "";
+                searchBox.ForeColor = Color.Black;
+            }
         }
     }
 }
