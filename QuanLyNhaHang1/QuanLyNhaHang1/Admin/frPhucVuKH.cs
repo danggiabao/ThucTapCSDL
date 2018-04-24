@@ -15,8 +15,7 @@ namespace QuanLyNhaHang1
     {
         public frPhucVuKH()
         {
-            InitializeComponent();
-           
+            InitializeComponent();          
         }
         DataConnections con = new DataConnections();
         #region ShowListview
@@ -68,10 +67,9 @@ namespace QuanLyNhaHang1
         private void button1_Click(object sender, EventArgs e)
         {
             string soban = "";
-            soban = txtSoban.Text;
             ListViewItem liv = new ListViewItem(soban);
-            liv.SubItems.Add(cbbMonAn.Text);
             liv.SubItems.Add(cbbKH.Text);
+            liv.SubItems.Add(cbbMonAn.Text);
             liv.SubItems.Add(nudSoluong.Text);
             lvPhucVu.Items.Add(liv);
         }

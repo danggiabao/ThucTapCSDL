@@ -191,7 +191,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox txbUsername;
+        public System.Windows.Forms.TextBox txbUsername;
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.TextBox txbPassword;
         private System.Windows.Forms.Label lblPassword;

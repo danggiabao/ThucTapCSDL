@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frTrangchu2));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lb2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnNhanVien = new System.Windows.Forms.Button();
@@ -45,6 +46,7 @@
             this.panel1.AutoSize = true;
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panel1.Controls.Add(this.lb2);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.btnNhanVien);
             this.panel1.Controls.Add(this.btnThongKe);
@@ -54,6 +56,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1071, 604);
             this.panel1.TabIndex = 9;
+            // 
+            // lb2
+            // 
+            this.lb2.AutoSize = true;
+            this.lb2.Font = new System.Drawing.Font("Courier New", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb2.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.lb2.Location = new System.Drawing.Point(1032, 584);
+            this.lb2.Name = "lb2";
+            this.lb2.Size = new System.Drawing.Size(39, 20);
+            this.lb2.TabIndex = 9;
+            this.lb2.Text = "111";
+            this.lb2.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lb2.Visible = false;
             // 
             // panel3
             // 
@@ -130,7 +145,9 @@
             this.Name = "frTrangchu2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chương trình quản lý nhà hàng";
+            this.Load += new System.EventHandler(this.frTrangchu2_Load);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.ResumeLayout(false);
@@ -146,5 +163,6 @@
         private System.Windows.Forms.Button btnNhanVien;
         private System.Windows.Forms.Button btnThongKe;
         private System.Windows.Forms.Button btnTaiKhoan;
+        private System.Windows.Forms.Label lb2;
     }
 }

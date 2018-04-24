@@ -16,7 +16,7 @@ namespace QuanLyNhaHang1
         {
             InitializeComponent();
         }
-
+        public string username ;
         private void button4_Click(object sender, EventArgs e)
         {
             frNhanvien f = new frNhanvien();
@@ -60,9 +60,15 @@ namespace QuanLyNhaHang1
         private void btnTaiKhoan_Click(object sender, EventArgs e)
         {
             frTaiKhoan f = new frTaiKhoan();
+            f.name = lb1.Text;
             this.Hide();
             f.ShowDialog();
             this.Show();
+        }
+
+        private void frTrangChu_Load(object sender, EventArgs e)
+        {
+            lb1.Text = username;
         }
     }
 }

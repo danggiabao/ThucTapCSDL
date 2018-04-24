@@ -26,7 +26,6 @@ namespace QuanLyNhaHang1
             }
         }
         #region event_button_checkbox_lable
-
         private void btnLogin_Click(object sender, EventArgs e)
         {
             con.OpenConnection();
@@ -41,16 +40,18 @@ namespace QuanLyNhaHang1
             var user = data.Read();
             if (user == true)
             {
+                
                 if ((int)data["PHANQUYEN"] == 1)// Bảng của admin
                 {
                     frTrangChu f = new frTrangChu();
+                    f.username = txbUsername.Text;
                     this.Hide();
                     f.ShowDialog();
                     this.Show();
                 }
                 else if ((int)data["PHANQUYEN"] == 2)//Bảng của nhân viên
                 {
-                    frTrangchu1 f = new frTrangchu1();
+                    frTrangchu1 f = new frTrangchu1();                  
                     this.Hide();
                     f.ShowDialog();
                     this.Show();
@@ -58,6 +59,7 @@ namespace QuanLyNhaHang1
                 else//Bảng của kế toán
                 {
                     frTrangchu2 f = new frTrangchu2();
+                    f.username1 = txbUsername.Text;
                     this.Hide();
                     f.ShowDialog();
                     this.Show();
@@ -65,10 +67,9 @@ namespace QuanLyNhaHang1
             }
             else
             {
-                MessageBox.Show("Đăng nhập thất bại");
+                MessageBox.Show("Lỗi đăng nhập");
             }
-            data.Close();
-            ///          
+            data.Close();      
         }
 
         private void checkBox1_show_password_CheckedChanged(object sender, EventArgs e)

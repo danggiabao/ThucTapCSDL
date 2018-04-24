@@ -15,23 +15,9 @@ namespace QuanLyNhaHang1
         public frTrangchu2()
         {
             InitializeComponent();
+            
         }
-
-        private void btnThongKe_Click(object sender, EventArgs e)
-        {
-            frThongKe f = new frThongKe();
-            this.Hide();
-            f.ShowDialog();
-            this.Show();
-        }
-
-        private void btnTaiKhoan_Click(object sender, EventArgs e)
-        {
-            frTaiKhoan f = new frTaiKhoan();
-            this.Hide();
-            f.ShowDialog();
-            this.Show();
-        }
+        public string username1;
 
         private void btnNhanVien_Click(object sender, EventArgs e)
         {
@@ -44,6 +30,7 @@ namespace QuanLyNhaHang1
         private void btnTaiKhoan_Click_1(object sender, EventArgs e)
         {
             frTaiKhoan f = new frTaiKhoan();
+            f.name = lb2.Text;
             this.Hide();
             f.ShowDialog();
             this.Show();
@@ -55,6 +42,11 @@ namespace QuanLyNhaHang1
             this.Hide();
             f.ShowDialog();
             this.Show();
+        }
+
+        private void frTrangchu2_Load(object sender, EventArgs e)
+        {
+            lb2.Text = username1;
         }
     }
 }

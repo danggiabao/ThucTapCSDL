@@ -118,6 +118,7 @@
             // 
             // btnDangKy
             // 
+            this.btnDangKy.DialogResult = System.Windows.Forms.DialogResult.Yes;
             this.btnDangKy.Font = new System.Drawing.Font("Cambria", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDangKy.Location = new System.Drawing.Point(313, 432);
             this.btnDangKy.Name = "btnDangKy";

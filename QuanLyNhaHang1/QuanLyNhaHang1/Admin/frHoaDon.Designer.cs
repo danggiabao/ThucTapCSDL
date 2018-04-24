@@ -282,7 +282,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.CancelButton = this.btnThoat;
             this.ClientSize = new System.Drawing.Size(1071, 604);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtTimKiem);
