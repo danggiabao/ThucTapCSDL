@@ -33,17 +33,17 @@
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.cbbNV = new System.Windows.Forms.ComboBox();
-            this.cbbKh = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.giott = new System.Windows.Forms.DateTimePicker();
+            this.ngaylap = new System.Windows.Forms.DateTimePicker();
+            this.cbbnv = new System.Windows.Forms.ComboBox();
+            this.cbbkh = new System.Windows.Forms.ComboBox();
+            this.txtmahd = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.lvHoaDon = new System.Windows.Forms.ListView();
+            this.lvHD = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -51,21 +51,23 @@
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.btnRs = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.panel2.Controls.Add(this.btnRs);
             this.panel2.Controls.Add(this.btnThoat);
             this.panel2.Controls.Add(this.btnXoa);
             this.panel2.Controls.Add(this.btnSua);
             this.panel2.Controls.Add(this.btnThem);
-            this.panel2.Controls.Add(this.dateTimePicker2);
-            this.panel2.Controls.Add(this.dateTimePicker1);
-            this.panel2.Controls.Add(this.cbbNV);
-            this.panel2.Controls.Add(this.cbbKh);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.giott);
+            this.panel2.Controls.Add(this.ngaylap);
+            this.panel2.Controls.Add(this.cbbnv);
+            this.panel2.Controls.Add(this.cbbkh);
+            this.panel2.Controls.Add(this.txtmahd);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
@@ -86,6 +88,7 @@
             this.btnThoat.TabIndex = 22;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // btnXoa
             // 
@@ -96,6 +99,7 @@
             this.btnXoa.TabIndex = 21;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnSua
             // 
@@ -106,6 +110,7 @@
             this.btnSua.TabIndex = 20;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnThem
             // 
@@ -116,50 +121,53 @@
             this.btnThem.TabIndex = 19;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
-            // dateTimePicker2
+            // giott
             // 
-            this.dateTimePicker2.CustomFormat = "HH:mm";
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.dateTimePicker2.Location = new System.Drawing.Point(500, 66);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.ShowUpDown = true;
-            this.dateTimePicker2.Size = new System.Drawing.Size(250, 22);
-            this.dateTimePicker2.TabIndex = 9;
-            this.dateTimePicker2.Value = new System.DateTime(2018, 4, 12, 0, 0, 0, 0);
+            this.giott.CustomFormat = "HH:mm";
+            this.giott.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.giott.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.giott.Location = new System.Drawing.Point(500, 66);
+            this.giott.Name = "giott";
+            this.giott.ShowUpDown = true;
+            this.giott.Size = new System.Drawing.Size(250, 22);
+            this.giott.TabIndex = 9;
+            this.giott.Value = new System.DateTime(2018, 4, 12, 0, 0, 0, 0);
             // 
-            // dateTimePicker1
+            // ngaylap
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(500, 19);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(251, 22);
-            this.dateTimePicker1.TabIndex = 8;
-            this.dateTimePicker1.Value = new System.DateTime(2018, 3, 27, 0, 0, 0, 0);
+            this.ngaylap.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.ngaylap.Location = new System.Drawing.Point(500, 19);
+            this.ngaylap.Name = "ngaylap";
+            this.ngaylap.Size = new System.Drawing.Size(251, 22);
+            this.ngaylap.TabIndex = 8;
+            this.ngaylap.Value = new System.DateTime(2018, 3, 27, 0, 0, 0, 0);
             // 
-            // cbbNV
+            // cbbnv
             // 
-            this.cbbNV.FormattingEnabled = true;
-            this.cbbNV.Location = new System.Drawing.Point(130, 105);
-            this.cbbNV.Name = "cbbNV";
-            this.cbbNV.Size = new System.Drawing.Size(220, 24);
-            this.cbbNV.TabIndex = 7;
+            this.cbbnv.FormattingEnabled = true;
+            this.cbbnv.Location = new System.Drawing.Point(130, 105);
+            this.cbbnv.Name = "cbbnv";
+            this.cbbnv.Size = new System.Drawing.Size(220, 24);
+            this.cbbnv.TabIndex = 7;
+            this.cbbnv.SelectedIndexChanged += new System.EventHandler(this.cbbnv_SelectedIndexChanged);
             // 
-            // cbbKh
+            // cbbkh
             // 
-            this.cbbKh.FormattingEnabled = true;
-            this.cbbKh.Location = new System.Drawing.Point(130, 62);
-            this.cbbKh.Name = "cbbKh";
-            this.cbbKh.Size = new System.Drawing.Size(220, 24);
-            this.cbbKh.TabIndex = 6;
+            this.cbbkh.FormattingEnabled = true;
+            this.cbbkh.Location = new System.Drawing.Point(130, 62);
+            this.cbbkh.Name = "cbbkh";
+            this.cbbkh.Size = new System.Drawing.Size(220, 24);
+            this.cbbkh.TabIndex = 6;
+            this.cbbkh.SelectedIndexChanged += new System.EventHandler(this.cbbkh_SelectedIndexChanged);
             // 
-            // textBox1
+            // txtmahd
             // 
-            this.textBox1.Location = new System.Drawing.Point(130, 18);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(220, 22);
-            this.textBox1.TabIndex = 5;
+            this.txtmahd.Location = new System.Drawing.Point(130, 18);
+            this.txtmahd.Name = "txtmahd";
+            this.txtmahd.Size = new System.Drawing.Size(220, 22);
+            this.txtmahd.TabIndex = 5;
             // 
             // label5
             // 
@@ -197,9 +205,9 @@
             this.label2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(3, 70);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(121, 18);
+            this.label2.Size = new System.Drawing.Size(92, 18);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Tên khách hàng";
+            this.label2.Text = "Khách hàng";
             // 
             // label1
             // 
@@ -211,22 +219,23 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã hóa đơn";
             // 
-            // lvHoaDon
+            // lvHD
             // 
-            this.lvHoaDon.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lvHD.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4,
             this.columnHeader5});
-            this.lvHoaDon.FullRowSelect = true;
-            this.lvHoaDon.GridLines = true;
-            this.lvHoaDon.Location = new System.Drawing.Point(4, 35);
-            this.lvHoaDon.Name = "lvHoaDon";
-            this.lvHoaDon.Size = new System.Drawing.Size(1064, 398);
-            this.lvHoaDon.TabIndex = 2;
-            this.lvHoaDon.UseCompatibleStateImageBehavior = false;
-            this.lvHoaDon.View = System.Windows.Forms.View.Details;
+            this.lvHD.FullRowSelect = true;
+            this.lvHD.GridLines = true;
+            this.lvHD.Location = new System.Drawing.Point(4, 35);
+            this.lvHD.Name = "lvHD";
+            this.lvHD.Size = new System.Drawing.Size(1064, 398);
+            this.lvHD.TabIndex = 2;
+            this.lvHD.UseCompatibleStateImageBehavior = false;
+            this.lvHD.View = System.Windows.Forms.View.Details;
+            this.lvHD.SelectedIndexChanged += new System.EventHandler(this.lvHD_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -235,7 +244,7 @@
             // 
             // columnHeader2
             // 
-            this.columnHeader2.Text = "Tên khách hàng";
+            this.columnHeader2.Text = "Mã khách hàng";
             this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.columnHeader2.Width = 200;
             // 
@@ -253,7 +262,7 @@
             // 
             // columnHeader5
             // 
-            this.columnHeader5.Text = "Nhân viên";
+            this.columnHeader5.Text = "Mã nhân viên";
             this.columnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.columnHeader5.Width = 150;
             // 
@@ -278,6 +287,17 @@
             this.label6.TabIndex = 6;
             this.label6.Text = "Thông tin hóa đơn";
             // 
+            // btnRs
+            // 
+            this.btnRs.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnRs.Location = new System.Drawing.Point(844, 121);
+            this.btnRs.Name = "btnRs";
+            this.btnRs.Size = new System.Drawing.Size(185, 30);
+            this.btnRs.TabIndex = 23;
+            this.btnRs.Text = "Làm mới";
+            this.btnRs.UseVisualStyleBackColor = true;
+            this.btnRs.Click += new System.EventHandler(this.btnRs_Click);
+            // 
             // frHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -288,7 +308,7 @@
             this.ClientSize = new System.Drawing.Size(1071, 604);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtTimKiem);
-            this.Controls.Add(this.lvHoaDon);
+            this.Controls.Add(this.lvHD);
             this.Controls.Add(this.panel2);
             this.Name = "frHoaDon";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -304,27 +324,28 @@
         #endregion
 
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ListView lvHoaDon;
+        private System.Windows.Forms.ListView lvHD;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtmahd;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtTimKiem;
-        private System.Windows.Forms.ComboBox cbbNV;
-        private System.Windows.Forms.ComboBox cbbKh;
+        private System.Windows.Forms.ComboBox cbbnv;
+        private System.Windows.Forms.ComboBox cbbkh;
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnThem;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker giott;
+        private System.Windows.Forms.DateTimePicker ngaylap;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnRs;
     }
 }

@@ -21,47 +21,49 @@ namespace QuanLyNhaHang1
             this.searchBox.Leave += new System.EventHandler(this.searchBox_Leave);
             this.searchBox.Enter += new System.EventHandler(this.searchBox_Enter);
         }
-        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-4IRSTF4;Initial Catalog=QLNH2;Integrated Security=True");
-        private void searchBox_TextChanged(object sender, EventArgs e)
+
+        DataConnections con = new DataConnections();
+        private void frNhanvien_Load(object sender, EventArgs e)
         {
-
+            this.Showlv();
         }
-
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-        public void Showlv()
-        {
-            conn.Open();
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from NHANVIEN";
-            cmd.Connection = conn;
-
-            SqlDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
-            {
-                ListViewItem liv = new ListViewItem(reader.GetString(0));
-                liv.SubItems.Add(reader.GetString(1));
-                liv.SubItems.Add(reader.GetString(2));
-                liv.SubItems.Add(reader.GetDateTime(3).ToString("dd/MM/yyyy"));
-                liv.SubItems.Add(reader.GetString(4));
-                lvNV.Items.Add(liv);
-            }
-            reader.Close();
-        }
-
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-        private void frNhanvien_Load(object sender, EventArgs e)
+        #region ShowData
+        List<string> lst = new List<string>();
+        public void Showlv()
         {
-            this.Showlv();
-        }
+            con.OpenConnection();
+            btnSua.Enabled = false;
+            btnXoa.Enabled = false;
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select * from NHANVIEN";
+            cmd.Connection = con.conn;
 
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                string manv = reader.GetString(0);
+                ListViewItem liv = new ListViewItem(reader.GetString(0));
+                liv.SubItems.Add(reader.GetString(1));
+                liv.SubItems.Add(reader.GetString(2));
+                liv.SubItems.Add(reader.GetDateTime(3).ToString());
+                liv.SubItems.Add(reader.GetString(4));
+                lst.Add(manv);
+                lvNV.Items.Add(liv);
+            }
+            reader.Close();
+        }
+        #endregion     
+        #region SearchBox
+        private void searchBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
         private void searchBox_DragLeave(object sender, EventArgs e)
         {
 
@@ -84,5 +86,199 @@ namespace QuanLyNhaHang1
                 searchBox.ForeColor = Color.Black;
             }
         }
+        #endregion
+        #region ListView
+        private void lvNV_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtbMaNV.Enabled = false;
+            btnThem.Enabled = false;
+            btnSua.Enabled = true;
+            btnXoa.Enabled = true;
+            if (lvNV.SelectedItems.Count == 0) return;
+            ListViewItem liv = lvNV.SelectedItems[0];
+            txtbMaNV.Text = liv.SubItems[0].Text;
+            txtbTen.Text = liv.SubItems[1].Text;
+            if (rdnam.Text.ToLower() == liv.SubItems[2].Text.ToLower())
+            {
+                rdnam.Checked = true;
+                rdnu.Checked = false;
+            }
+            else
+            {
+                rdnu.Checked = true;
+                rdnam.Checked = false;
+            }
+            dtNgaySinh.Text = liv.SubItems[3].Text;
+            
+            txtbQue.Text = liv.SubItems[4].Text;
+        }
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+#endregion
+        #region DataBase
+        private void ThemNV()
+        {
+            con.OpenConnection();
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "ADD_NHANVIEN";
+            cmd.Connection = con.conn;
+            
+            cmd.Parameters.Add("@MANV", SqlDbType.VarChar).Value = txtbMaNV.Text;
+            cmd.Parameters.Add("@HOTEN", SqlDbType.NVarChar).Value = txtbTen.Text;
+            if (rdnam.Checked == true)
+            {
+                cmd.Parameters.Add("@GIOITINH", SqlDbType.NVarChar).Value = rdnam.Text;
+            }
+            else
+            {
+                cmd.Parameters.Add("@GIOITINH", SqlDbType.NVarChar).Value = rdnu.Text;
+            }
+            cmd.Parameters.Add("@NGAYSINH", SqlDbType.Date).Value = dtNgaySinh.Value;
+            
+            cmd.Parameters.Add("@QUEQUAN", SqlDbType.VarChar).Value = txtbQue.Text;
+
+            int ret = cmd.ExecuteNonQuery();
+            lvNV.Items.Clear();
+            if (ret > 0)
+                Showlv();
+        }
+
+        private void SuaNV()
+        {
+            con.OpenConnection();
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "ALTER_NHANVIEN";
+            cmd.Connection = con.conn;
+            cmd.Parameters.Add("@MANV", SqlDbType.VarChar).Value = txtbMaNV.Text;
+            cmd.Parameters.Add("@HOTEN", SqlDbType.NVarChar).Value = txtbTen.Text;
+            if (rdnam.Checked == true)
+            {
+                cmd.Parameters.Add("@GIOITINH", SqlDbType.NVarChar).Value = rdnam.Text;
+            }
+            else
+            {
+                cmd.Parameters.Add("@GIOITINH", SqlDbType.NVarChar).Value = rdnu.Text;
+            }
+            cmd.Parameters.Add("@NGAYSINH", SqlDbType.Date).Value = dtNgaySinh.Value;
+
+            cmd.Parameters.Add("@QUEQUAN", SqlDbType.VarChar).Value = txtbQue.Text;
+            int ret = cmd.ExecuteNonQuery();
+            lvNV.Items.Clear();
+            if (ret > 0)
+                Showlv();
+
+        }
+        private void XoaNV()
+        {
+            con.OpenConnection();
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "D_NHANVIEN";
+            cmd.Connection = con.conn;
+
+            cmd.Parameters.Add("@MANV", SqlDbType.NVarChar).Value = txtbMaNV.Text;
+            int ret = cmd.ExecuteNonQuery();
+            lvNV.Items.Clear();
+            if (ret > 0)
+                Showlv();
+        }
+
+
+        #endregion
+        #region Button
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            bool check = true;
+            foreach (string us in lst)
+            {
+
+                if (us.Contains(txtbMaNV.Text))
+                {
+                    MessageBox.Show("Mã nhân viên đã tồn tại !");
+                    check = false;
+                    break;
+                }
+                check = true;
+            }
+            if (check == true)
+            {
+                ListViewItem liv = new ListViewItem(txtbMaNV.Text);
+                liv.SubItems.Add(txtbTen.Text);
+                if (rdnam.Checked == true)
+                {
+                    liv.SubItems.Add(rdnam.Text);
+                }
+                else
+                {
+                    liv.SubItems.Add(rdnu.Text);
+                }
+                liv.SubItems.Add(dtNgaySinh.Text);
+                liv.SubItems.Add(txtbQue.Text);
+                lvNV.Items.Add(liv);
+            }
+            ThemNV();
+            MessageBox.Show("Đã thêm thành công", "Thêm");
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            btnThem.Enabled = true;
+            if (lvNV.SelectedItems.Count == 0) return;
+            ListViewItem liv = lvNV.SelectedItems[0];
+            liv.SubItems[0].Text = txtbMaNV.Text;
+            liv.SubItems[1].Text = txtbTen.Text;
+            if (rdnam.Checked == true)
+            {
+                liv.SubItems[2].Text = rdnam.Text;             
+            }
+            else
+            {             
+                liv.SubItems[2].Text = rdnu.Text;
+            }
+            liv.SubItems[3].Text = dtNgaySinh.Text;
+            liv.SubItems[4].Text = txtbQue.Text;
+            SuaNV();
+            MessageBox.Show("Đã sửa thành công", "Sửa");
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            if (lvNV.SelectedItems != null)
+            {
+                for (int i = 0; i < lvNV.Items.Count; i++)
+                {
+                    if (lvNV.Items[i].Selected)
+                    {
+                        lvNV.Items[i].Remove();
+                        i--;
+                    }
+                }
+            }
+            XoaNV();
+            MessageBox.Show("Đã xoá thành công", "Xoá");
+        }
+        #endregion
+
+        private void btnRs_Click(object sender, EventArgs e)
+        {
+            btnThem.Enabled = true;
+            btnSua.Enabled = false;
+            btnXoa.Enabled = false;
+            txtbMaNV.Enabled = true;
+            rdnam.Checked = false;
+            rdnu.Checked = false;
+            txtbMaNV.ResetText();
+            txtbTen.ResetText();
+            txtbQue.ResetText();
+            
+            dtNgaySinh.ResetText();
+            
+        }
+
+        
     }
 }
