@@ -410,6 +410,7 @@
             this.columnHeader5,
             this.columnHeader6});
             this.lvNhomMon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvNhomMon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvNhomMon.FullRowSelect = true;
             this.lvNhomMon.GridLines = true;
             this.lvNhomMon.Location = new System.Drawing.Point(3, 24);

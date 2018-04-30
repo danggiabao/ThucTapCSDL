@@ -218,9 +218,9 @@ namespace QuanLyNhaHang1
                 liv.SubItems.Add(giott.Text);
                 liv.SubItems.Add(tennv);
                 lvHD.Items.Add(liv);
-            }
-            ThemHD();
-            MessageBox.Show("Đã thêm thành công", "Thêm");
+                ThemHD();
+                MessageBox.Show("Đã thêm thành công", "Thêm");
+            }           
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -252,10 +252,6 @@ namespace QuanLyNhaHang1
             }
             XoaHD();
             MessageBox.Show("Đã xoá thành công", "Xoá");
-        }
-        private void btnThoat_Click(object sender, EventArgs e)
-        {
-
         }
         #endregion
 

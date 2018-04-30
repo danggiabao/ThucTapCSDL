@@ -17,14 +17,10 @@ namespace QuanLyNhaHang1
             InitializeComponent();
         }
 
-        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        private void frThongKe_Load(object sender, EventArgs e)
         {
 
-        }
-
-        private void hóaĐơnToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
+            this.reportViewer1.RefreshReport();
         }
     }
 }

@@ -27,10 +27,6 @@ namespace QuanLyNhaHang1
         {
             this.Showlv();
         }
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         #region ShowData
         List<string> lst = new List<string>();
@@ -109,14 +105,10 @@ namespace QuanLyNhaHang1
                 rdnam.Checked = false;
             }
             dtNgaySinh.Text = liv.SubItems[3].Text;
-            
+
             txtbQue.Text = liv.SubItems[4].Text;
         }
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-#endregion
+        #endregion
         #region DataBase
         private void ThemNV()
         {
@@ -125,7 +117,7 @@ namespace QuanLyNhaHang1
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = "ADD_NHANVIEN";
             cmd.Connection = con.conn;
-            
+
             cmd.Parameters.Add("@MANV", SqlDbType.VarChar).Value = txtbMaNV.Text;
             cmd.Parameters.Add("@HOTEN", SqlDbType.NVarChar).Value = txtbTen.Text;
             if (rdnam.Checked == true)
@@ -137,7 +129,7 @@ namespace QuanLyNhaHang1
                 cmd.Parameters.Add("@GIOITINH", SqlDbType.NVarChar).Value = rdnu.Text;
             }
             cmd.Parameters.Add("@NGAYSINH", SqlDbType.Date).Value = dtNgaySinh.Value;
-            
+
             cmd.Parameters.Add("@QUEQUAN", SqlDbType.VarChar).Value = txtbQue.Text;
 
             int ret = cmd.ExecuteNonQuery();
@@ -145,7 +137,6 @@ namespace QuanLyNhaHang1
             if (ret > 0)
                 Showlv();
         }
-
         private void SuaNV()
         {
             con.OpenConnection();
@@ -170,7 +161,6 @@ namespace QuanLyNhaHang1
             lvNV.Items.Clear();
             if (ret > 0)
                 Showlv();
-
         }
         private void XoaNV()
         {
@@ -186,7 +176,6 @@ namespace QuanLyNhaHang1
             if (ret > 0)
                 Showlv();
         }
-
 
         #endregion
         #region Button
@@ -219,9 +208,9 @@ namespace QuanLyNhaHang1
                 liv.SubItems.Add(dtNgaySinh.Text);
                 liv.SubItems.Add(txtbQue.Text);
                 lvNV.Items.Add(liv);
-            }
-            ThemNV();
-            MessageBox.Show("Đã thêm thành công", "Thêm");
+                ThemNV();
+                MessageBox.Show("Đã thêm thành công", "Thêm");
+            }        
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -233,10 +222,10 @@ namespace QuanLyNhaHang1
             liv.SubItems[1].Text = txtbTen.Text;
             if (rdnam.Checked == true)
             {
-                liv.SubItems[2].Text = rdnam.Text;             
+                liv.SubItems[2].Text = rdnam.Text;
             }
             else
-            {             
+            {
                 liv.SubItems[2].Text = rdnu.Text;
             }
             liv.SubItems[3].Text = dtNgaySinh.Text;
@@ -274,11 +263,9 @@ namespace QuanLyNhaHang1
             txtbMaNV.ResetText();
             txtbTen.ResetText();
             txtbQue.ResetText();
-            
+
             dtNgaySinh.ResetText();
-            
         }
 
-        
     }
 }

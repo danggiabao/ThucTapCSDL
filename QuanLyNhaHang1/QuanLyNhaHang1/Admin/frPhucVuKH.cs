@@ -18,6 +18,13 @@ namespace QuanLyNhaHang1
             InitializeComponent();          
         }
         DataConnections con = new DataConnections();
+        private void frPhucVuKH_Load(object sender, EventArgs e)
+        {
+            this.ShowKH();
+            this.showcbbBan();
+            this.showcbb();
+            this.showcbbKH();
+        }
         #region ShowListview
         List<string> lst = new List<string>();
         public void ShowKH()
@@ -31,7 +38,7 @@ namespace QuanLyNhaHang1
             SqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-                ListViewItem liv = new ListViewItem(reader.GetInt32(0).ToString());
+                ListViewItem liv = new ListViewItem(reader.GetString(0));
                 liv.SubItems.Add(reader.GetString(1));
                 lvKH.Items.Add(liv);
             }
@@ -39,12 +46,7 @@ namespace QuanLyNhaHang1
         }
         #endregion
         #region ShowCombobox
-        private void frPhucVuKH_Load(object sender, EventArgs e)
-        {
-            this.ShowKH();
-            this.showcbb();
-            this.showcbbKH();
-        }
+     
         public void showcbb()
         {
             SqlDataAdapter da = new SqlDataAdapter("Select TENMON From MONAN", con.conn);
@@ -63,15 +65,23 @@ namespace QuanLyNhaHang1
             cbbKH.DisplayMember = "HOTEN";
             cbbKH.ValueMember = "HOTEN";
         }
+        public void showcbbBan()
+        {
+            SqlDataAdapter da = new SqlDataAdapter("Select TENBAN From BAN", con.conn);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            cbbBan.DataSource = dt;
+            cbbBan.DisplayMember = "TENBAN";
+            cbbBan.ValueMember = "TENBAN";
+        }
         #endregion
         private void button1_Click(object sender, EventArgs e)
         {
-            string soban = "";
-            ListViewItem liv = new ListViewItem(soban);
-            liv.SubItems.Add(cbbKH.Text);
+            ListViewItem liv = new ListViewItem(cbbKH.Text);
             liv.SubItems.Add(cbbMonAn.Text);
             liv.SubItems.Add(nudSoluong.Text);
             lvPhucVu.Items.Add(liv);
         }
+
     }
 }
