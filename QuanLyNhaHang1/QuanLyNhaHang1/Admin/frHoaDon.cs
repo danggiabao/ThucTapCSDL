@@ -22,11 +22,10 @@ namespace QuanLyNhaHang1
         }
         DataConnections con = new DataConnections();
         #region ShowToListview
-        List<string> lst = new List<string>();
+        List<string> list = new List<string>();
         private void lvHD_SelectedIndexChanged(object sender, EventArgs e)
         {
             txtmahd.Enabled = false;
-
             btnThem.Enabled = false;
             btnXoa.Enabled = true;
             btnSua.Enabled = true;
@@ -55,7 +54,8 @@ namespace QuanLyNhaHang1
                 liv.SubItems.Add(reader.GetString(1));
                 liv.SubItems.Add(reader.GetDateTime(2).ToString());
                 liv.SubItems.Add(reader.GetDateTime(3).ToString());
-                liv.SubItems.Add(reader.GetString(4));          
+                liv.SubItems.Add(reader.GetString(4));
+                list.Add(reader.GetString(0));
                 lvHD.Items.Add(liv);
             }
             reader.Close();
@@ -199,9 +199,8 @@ namespace QuanLyNhaHang1
         private void btnThem_Click(object sender, EventArgs e)
         {
             bool check = true;
-            foreach (string us in lst)
+            foreach (string us in list)
             {
-
                 if (us.Contains(txtmahd.Text))
                 {
                     MessageBox.Show("Mã hoá đơn đã tồn tại !");

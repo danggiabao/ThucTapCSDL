@@ -31,6 +31,12 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lvPhucVu = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label9 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -61,22 +67,16 @@
             this.lvKH = new System.Windows.Forms.ListView();
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.lvPhucVu = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSoluong)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -114,6 +114,58 @@
             this.tabPage1.Size = new System.Drawing.Size(1063, 573);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Đặt món";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.lvPhucVu);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(373, 6);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(682, 464);
+            this.groupBox2.TabIndex = 8;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Phiếu thực đơn";
+            // 
+            // lvPhucVu
+            // 
+            this.lvPhucVu.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4});
+            this.lvPhucVu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvPhucVu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvPhucVu.FullRowSelect = true;
+            this.lvPhucVu.GridLines = true;
+            this.lvPhucVu.Location = new System.Drawing.Point(3, 26);
+            this.lvPhucVu.Name = "lvPhucVu";
+            this.lvPhucVu.Size = new System.Drawing.Size(676, 435);
+            this.lvPhucVu.TabIndex = 5;
+            this.lvPhucVu.UseCompatibleStateImageBehavior = false;
+            this.lvPhucVu.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Khách hàng";
+            this.columnHeader1.Width = 140;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Món ăn";
+            this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader2.Width = 140;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Số lượng";
+            this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader3.Width = 80;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Đơn giá";
+            this.columnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader4.Width = 90;
             // 
             // label9
             // 
@@ -316,9 +368,10 @@
             this.btnRs.Location = new System.Drawing.Point(897, 369);
             this.btnRs.Name = "btnRs";
             this.btnRs.Size = new System.Drawing.Size(131, 39);
-            this.btnRs.TabIndex = 9;
+            this.btnRs.TabIndex = 6;
             this.btnRs.Text = "Làm mới";
             this.btnRs.UseVisualStyleBackColor = true;
+            this.btnRs.Click += new System.EventHandler(this.btnRs_Click);
             // 
             // label3
             // 
@@ -336,7 +389,7 @@
             this.txbMaKH.Location = new System.Drawing.Point(732, 129);
             this.txbMaKH.Name = "txbMaKH";
             this.txbMaKH.Size = new System.Drawing.Size(287, 24);
-            this.txbMaKH.TabIndex = 7;
+            this.txbMaKH.TabIndex = 1;
             // 
             // label6
             // 
@@ -357,6 +410,7 @@
             this.btnXoa.TabIndex = 5;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnSua
             // 
@@ -367,6 +421,7 @@
             this.btnSua.TabIndex = 4;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnThem
             // 
@@ -377,6 +432,7 @@
             this.btnThem.TabIndex = 3;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // txbTenKH
             // 
@@ -413,6 +469,7 @@
             this.columnHeader5,
             this.columnHeader6});
             this.lvKH.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvKH.FullRowSelect = true;
             this.lvKH.GridLines = true;
             this.lvKH.Location = new System.Drawing.Point(3, 23);
             this.lvKH.Name = "lvKH";
@@ -420,6 +477,7 @@
             this.lvKH.TabIndex = 0;
             this.lvKH.UseCompatibleStateImageBehavior = false;
             this.lvKH.View = System.Windows.Forms.View.Details;
+            this.lvKH.SelectedIndexChanged += new System.EventHandler(this.lvKH_SelectedIndexChanged);
             // 
             // columnHeader5
             // 
@@ -431,58 +489,6 @@
             this.columnHeader6.Text = "Tên khách hàng";
             this.columnHeader6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.columnHeader6.Width = 200;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.lvPhucVu);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(373, 6);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(682, 464);
-            this.groupBox2.TabIndex = 8;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Phiếu thực đơn";
-            // 
-            // lvPhucVu
-            // 
-            this.lvPhucVu.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4});
-            this.lvPhucVu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvPhucVu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvPhucVu.FullRowSelect = true;
-            this.lvPhucVu.GridLines = true;
-            this.lvPhucVu.Location = new System.Drawing.Point(3, 26);
-            this.lvPhucVu.Name = "lvPhucVu";
-            this.lvPhucVu.Size = new System.Drawing.Size(676, 435);
-            this.lvPhucVu.TabIndex = 5;
-            this.lvPhucVu.UseCompatibleStateImageBehavior = false;
-            this.lvPhucVu.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Khách hàng";
-            this.columnHeader1.Width = 140;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Món ăn";
-            this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader2.Width = 140;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Số lượng";
-            this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader3.Width = 80;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Đơn giá";
-            this.columnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader4.Width = 90;
             // 
             // frPhucVuKH
             // 
@@ -498,6 +504,7 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
@@ -507,7 +514,6 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

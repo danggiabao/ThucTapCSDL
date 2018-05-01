@@ -38,6 +38,7 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnRs = new System.Windows.Forms.Button();
             this.rdnu = new System.Windows.Forms.RadioButton();
             this.rdnam = new System.Windows.Forms.RadioButton();
             this.txtbQue = new System.Windows.Forms.TextBox();
@@ -53,7 +54,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnRs = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -100,7 +100,7 @@
             this.searchBox.Location = new System.Drawing.Point(866, 12);
             this.searchBox.Name = "searchBox";
             this.searchBox.Size = new System.Drawing.Size(202, 24);
-            this.searchBox.TabIndex = 22;
+            this.searchBox.TabIndex = 12;
             // 
             // lvNV
             // 
@@ -175,13 +175,24 @@
             this.panel3.Size = new System.Drawing.Size(1071, 171);
             this.panel3.TabIndex = 16;
             // 
+            // btnRs
+            // 
+            this.btnRs.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnRs.Location = new System.Drawing.Point(848, 131);
+            this.btnRs.Name = "btnRs";
+            this.btnRs.Size = new System.Drawing.Size(185, 30);
+            this.btnRs.TabIndex = 11;
+            this.btnRs.Text = "Làm mới";
+            this.btnRs.UseVisualStyleBackColor = true;
+            this.btnRs.Click += new System.EventHandler(this.btnRs_Click);
+            // 
             // rdnu
             // 
             this.rdnu.AutoSize = true;
             this.rdnu.Location = new System.Drawing.Point(257, 129);
             this.rdnu.Name = "rdnu";
             this.rdnu.Size = new System.Drawing.Size(47, 21);
-            this.rdnu.TabIndex = 27;
+            this.rdnu.TabIndex = 4;
             this.rdnu.TabStop = true;
             this.rdnu.Text = "Nữ";
             this.rdnu.UseVisualStyleBackColor = true;
@@ -189,28 +200,28 @@
             // rdnam
             // 
             this.rdnam.AutoSize = true;
+            this.rdnam.Checked = true;
             this.rdnam.Location = new System.Drawing.Point(130, 129);
             this.rdnam.Name = "rdnam";
             this.rdnam.Size = new System.Drawing.Size(58, 21);
-            this.rdnam.TabIndex = 26;
+            this.rdnam.TabIndex = 3;
             this.rdnam.TabStop = true;
             this.rdnam.Text = "Nam";
             this.rdnam.UseVisualStyleBackColor = true;
-            
             // 
             // txtbQue
             // 
             this.txtbQue.Location = new System.Drawing.Point(511, 23);
             this.txtbQue.Name = "txtbQue";
             this.txtbQue.Size = new System.Drawing.Size(250, 22);
-            this.txtbQue.TabIndex = 25;
+            this.txtbQue.TabIndex = 5;
             // 
             // txtbTen
             // 
             this.txtbTen.Location = new System.Drawing.Point(130, 79);
             this.txtbTen.Name = "txtbTen";
             this.txtbTen.Size = new System.Drawing.Size(237, 22);
-            this.txtbTen.TabIndex = 23;
+            this.txtbTen.TabIndex = 2;
             // 
             // btnThoat
             // 
@@ -219,7 +230,7 @@
             this.btnThoat.Location = new System.Drawing.Point(954, 85);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(105, 33);
-            this.btnThoat.TabIndex = 22;
+            this.btnThoat.TabIndex = 10;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = true;
             // 
@@ -229,7 +240,7 @@
             this.btnXoa.Location = new System.Drawing.Point(806, 85);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(106, 33);
-            this.btnXoa.TabIndex = 21;
+            this.btnXoa.TabIndex = 9;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
@@ -240,7 +251,7 @@
             this.btnSua.Location = new System.Drawing.Point(954, 23);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(105, 33);
-            this.btnSua.TabIndex = 20;
+            this.btnSua.TabIndex = 8;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
@@ -251,7 +262,7 @@
             this.btnThem.Location = new System.Drawing.Point(806, 23);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(106, 33);
-            this.btnThem.TabIndex = 19;
+            this.btnThem.TabIndex = 7;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
@@ -263,7 +274,7 @@
             this.dtNgaySinh.Location = new System.Drawing.Point(511, 77);
             this.dtNgaySinh.Name = "dtNgaySinh";
             this.dtNgaySinh.Size = new System.Drawing.Size(250, 22);
-            this.dtNgaySinh.TabIndex = 9;
+            this.dtNgaySinh.TabIndex = 6;
             this.dtNgaySinh.Value = new System.DateTime(2018, 3, 27, 18, 26, 0, 0);
             // 
             // txtbMaNV
@@ -271,7 +282,7 @@
             this.txtbMaNV.Location = new System.Drawing.Point(130, 23);
             this.txtbMaNV.Name = "txtbMaNV";
             this.txtbMaNV.Size = new System.Drawing.Size(237, 22);
-            this.txtbMaNV.TabIndex = 5;
+            this.txtbMaNV.TabIndex = 1;
             // 
             // label5
             // 
@@ -322,17 +333,6 @@
             this.label1.Size = new System.Drawing.Size(108, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã nhân viên";
-            // 
-            // btnRs
-            // 
-            this.btnRs.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnRs.Location = new System.Drawing.Point(848, 131);
-            this.btnRs.Name = "btnRs";
-            this.btnRs.Size = new System.Drawing.Size(185, 30);
-            this.btnRs.TabIndex = 28;
-            this.btnRs.Text = "Làm mới";
-            this.btnRs.UseVisualStyleBackColor = true;
-            this.btnRs.Click += new System.EventHandler(this.btnRs_Click);
             // 
             // frNhanvien
             // 
