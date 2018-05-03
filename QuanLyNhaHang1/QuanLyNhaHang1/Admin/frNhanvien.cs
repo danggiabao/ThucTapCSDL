@@ -132,14 +132,14 @@ namespace QuanLyNhaHang1
                 }
                 cmd.Parameters.Add("@NGAYSINH", SqlDbType.Date).Value = dtNgaySinh.Value;
 
-                cmd.Parameters.Add("@QUEQUAN", SqlDbType.VarChar).Value = txtbQue.Text;
+                cmd.Parameters.Add("@QUEQUAN", SqlDbType.NVarChar).Value = txtbQue.Text;
 
                 int ret = cmd.ExecuteNonQuery();
                 lvNV.Items.Clear();
                 if (ret > 0)
                     Showlv();
                 MessageBox.Show("Đã thêm thành công", "Thêm");
-                rdnam.Checked = true;
+                rdnam.Checked = false;
                 rdnu.Checked = false;
                 txtbMaNV.ResetText();
                 txtbTen.ResetText();
@@ -174,14 +174,14 @@ namespace QuanLyNhaHang1
                 }
                 cmd.Parameters.Add("@NGAYSINH", SqlDbType.Date).Value = dtNgaySinh.Value;
 
-                cmd.Parameters.Add("@QUEQUAN", SqlDbType.VarChar).Value = txtbQue.Text;
+                cmd.Parameters.Add("@QUEQUAN", SqlDbType.NVarChar).Value = txtbQue.Text;
                 int ret = cmd.ExecuteNonQuery();
                 lvNV.Items.Clear();
                 if (ret > 0)
                     Showlv();
                 MessageBox.Show("Đã sửa thành công", "Sửa");
                 txtbMaNV.Enabled = true;
-                rdnam.Checked = true;
+                rdnam.Checked = false;
                 rdnu.Checked = false;
                 txtbMaNV.ResetText();
                 txtbTen.ResetText();
@@ -210,10 +210,10 @@ namespace QuanLyNhaHang1
                 lvNV.Items.Clear();
                 if (ret > 0)
                     Showlv();
-                MessageBox.Show("Đã xóa thành công", "Xóa");
+                MessageBox.Show("Đã xóa thành công !", "Xóa");
                 btnThem.Enabled = true;
                 txtbMaNV.Enabled = true;
-                rdnam.Checked = true;
+                rdnam.Checked = false;
                 rdnu.Checked = false;
                 txtbMaNV.ResetText();
                 txtbTen.ResetText();
@@ -224,7 +224,7 @@ namespace QuanLyNhaHang1
             {
                 btnThem.Enabled = true;
                 txtbMaNV.Enabled = true;
-                rdnam.Checked = true;
+                rdnam.Checked = false;
                 rdnu.Checked = false;
                 txtbMaNV.ResetText();
                 txtbTen.ResetText();
@@ -239,7 +239,7 @@ namespace QuanLyNhaHang1
         #region Button
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if(txtbMaNV.Text != "")
+            if (txtbMaNV.Text != "")
             {
                 bool check = true;
                 foreach (string us in list)
@@ -268,8 +268,7 @@ namespace QuanLyNhaHang1
                     liv.SubItems.Add(dtNgaySinh.Text);
                     liv.SubItems.Add(txtbQue.Text);
                     lvNV.Items.Add(liv);
-                    ThemNV();
-                    
+                    ThemNV();                    
                 }
             }
             else
@@ -323,7 +322,7 @@ namespace QuanLyNhaHang1
             btnSua.Enabled = false;
             btnXoa.Enabled = false;
             txtbMaNV.Enabled = true;
-            rdnam.Checked = true;
+            rdnam.Checked = false;
             rdnu.Checked = false;
             txtbMaNV.ResetText();
             txtbTen.ResetText();

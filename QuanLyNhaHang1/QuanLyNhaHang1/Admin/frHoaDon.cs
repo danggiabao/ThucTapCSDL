@@ -144,21 +144,38 @@ namespace QuanLyNhaHang1
         #region Database
         private void ThemHD()
         {
-            con.OpenConnection();
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "ADD_HOADON";
-            cmd.Connection = con.conn;
-            cmd.Parameters.Add("@MAHD", SqlDbType.VarChar).Value = txtmahd.Text;
-            cmd.Parameters.Add("@NGAYLAP", SqlDbType.Date).Value = ngaylap.Value;
-            cmd.Parameters.Add("@GIOTHANHTOAN", SqlDbType.DateTime).Value = giott.Value;
-            cmd.Parameters.Add("@MANV", SqlDbType.VarChar).Value = cbbnv.Text;
-            cmd.Parameters.Add("@MAKH", SqlDbType.VarChar).Value = cbbkh.Text;
+            DialogResult dlr = MessageBox.Show("Bạn muốn thêm hoá đơn?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dlr == DialogResult.Yes)
+            {
+                con.OpenConnection();
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "ADD_HOADON";
+                cmd.Connection = con.conn;
+                cmd.Parameters.Add("@MAHD", SqlDbType.VarChar).Value = txtmahd.Text;
+                cmd.Parameters.Add("@NGAYLAP", SqlDbType.Date).Value = ngaylap.Value;
+                cmd.Parameters.Add("@GIOTHANHTOAN", SqlDbType.DateTime).Value = giott.Value;
+                cmd.Parameters.Add("@MANV", SqlDbType.VarChar).Value = cbbnv.Text;
+                cmd.Parameters.Add("@MAKH", SqlDbType.VarChar).Value = cbbkh.Text;
 
-            int ret = cmd.ExecuteNonQuery();
-            lvHD.Items.Clear();
-            if (ret > 0)
+                int ret = cmd.ExecuteNonQuery();
+                lvHD.Items.Clear();
+                if (ret > 0)
+                    showHoaDon();
+
+                MessageBox.Show("Đã thêm thành công", "Thêm");
+
+                txtmahd.ResetText();
+                ngaylap.ResetText();
+                giott.ResetText();
+                cbbkh.ResetText();
+                cbbnv.ResetText();
+            }
+            else
+            {
+                lvHD.Items.Clear();
                 showHoaDon();
+            }
         }
 
         private void SuaHD()
@@ -199,27 +216,36 @@ namespace QuanLyNhaHang1
         private void btnThem_Click(object sender, EventArgs e)
         {
             bool check = true;
-            foreach (string us in list)
+            if ((txtmahd.Text != "") &&  (cbbkh.Text !="") && (cbbnv.Text !="")       )
             {
-                if (us.Contains(txtmahd.Text))
+                foreach (string us in list)
                 {
-                    MessageBox.Show("Mã hoá đơn đã tồn tại !");
-                    check = false;
-                    break;
+                    if (us.Contains(txtmahd.Text))
+                    {
+                        MessageBox.Show("Mã hoá đơn đã tồn tại!","Thông báo");
+                        check = false;
+                        break;
+                    }
+                    check = true;
                 }
-                check = true;
+                if (check == true)
+                {
+                 
+                    ListViewItem liv = new ListViewItem(txtmahd.Text);
+                    liv.SubItems.Add(tenkh);
+                    liv.SubItems.Add(ngaylap.Text);
+                    liv.SubItems.Add(giott.Text);
+                    liv.SubItems.Add(tennv);
+                    lvHD.Items.Add(liv);
+                    ThemHD();
+                    
+                }
             }
-            if (check == true)
+            else
+            
             {
-                ListViewItem liv = new ListViewItem(txtmahd.Text);
-                liv.SubItems.Add(tenkh);
-                liv.SubItems.Add(ngaylap.Text);
-                liv.SubItems.Add(giott.Text);
-                liv.SubItems.Add(tennv);
-                lvHD.Items.Add(liv);
-                ThemHD();
-                MessageBox.Show("Đã thêm thành công", "Thêm");
-            }           
+                MessageBox.Show("Chưa nhập mã hoá đơn, mã nhân viên hoặc mã khách hàng", "Thông báo");
+            }
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -233,7 +259,7 @@ namespace QuanLyNhaHang1
             liv.SubItems[3].Text = giott.Text;
             liv.SubItems[4].Text = cbbnv.Text;
             SuaHD();
-            MessageBox.Show("Đã sửa thành công", "Sửa");
+            MessageBox.Show("Đã sửa thành công!", "Sửa");
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -250,7 +276,7 @@ namespace QuanLyNhaHang1
                 }
             }
             XoaHD();
-            MessageBox.Show("Đã xoá thành công", "Xoá");
+            MessageBox.Show("Đã xoá thành công!", "Xoá");
         }
         #endregion
 
