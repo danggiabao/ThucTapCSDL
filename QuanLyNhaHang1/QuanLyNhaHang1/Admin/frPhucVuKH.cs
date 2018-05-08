@@ -257,5 +257,10 @@ namespace QuanLyNhaHang1
             liv.SubItems.Add(nudSoluong.Text);
             lvPhucVu.Items.Add(liv);
         }
+
+        private void txbMaKH_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -10,7 +10,7 @@ namespace QuanLyNhaHang1
 {
     class DataConnections
     {
-        string Strcon = @"Data Source=DESKTOP-A8BKF4E;Initial Catalog=QLNH2;Integrated Security=True";
+        string Strcon = @"Data Source=DESKTOP-J3GADKO\SQLEXPRESS;Initial Catalog=QLNH2;Integrated Security=True";
         public SqlConnection conn = null;
         public void OpenConnection()
         {

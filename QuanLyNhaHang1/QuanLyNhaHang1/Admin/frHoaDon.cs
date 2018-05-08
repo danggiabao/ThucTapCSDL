@@ -296,5 +296,7 @@ namespace QuanLyNhaHang1
             giott.ResetText();
             
         }
+
+        
     }
 }
