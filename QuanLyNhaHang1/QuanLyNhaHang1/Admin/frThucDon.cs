@@ -13,13 +13,15 @@ namespace QuanLyNhaHang1
 {
     public partial class frThucDon : Form
     {
+        public static string Temp;
+        public static string cmb;
         public frThucDon()
         {
             InitializeComponent();
-            searchbox1.ForeColor = Color.LightGray;
-            searchbox1.Text = "Tìm kiếm";
-            this.searchbox1.Leave += new System.EventHandler(this.searchbox1_Leave);
-            this.searchbox1.Enter += new System.EventHandler(this.searchbox1_Enter);
+            txtTimKiem.ForeColor = Color.LightGray;
+            txtTimKiem.Text = "Tìm kiếm";
+            this.txtTimKiem.Leave += new System.EventHandler(this.searchbox1_Leave);
+            this.txtTimKiem.Enter += new System.EventHandler(this.searchbox1_Enter);
         }
         DataConnections con = new DataConnections();
         #region ShowInList
@@ -110,22 +112,28 @@ namespace QuanLyNhaHang1
         #region TimKiem
         private void searchbox1_Leave(object sender, EventArgs e)
         {
-            if (searchbox1.Text == "")
+            if (txtTimKiem.Text == "")
             {
-                searchbox1.Text = "Tìm kiếm";
-                searchbox1.ForeColor = Color.Gray;
+                txtTimKiem.Text = "Tìm kiếm";
+                txtTimKiem.ForeColor = Color.Gray;
             }
         }
 
         private void searchbox1_Enter(object sender, EventArgs e)
         {
-            if (searchbox1.Text == "Tìm kiếm")
+            if (txtTimKiem.Text == "Tìm kiếm")
             {
-                searchbox1.Text = "";
-                searchbox1.ForeColor = Color.Black;
+                txtTimKiem.Text = "";
+                txtTimKiem.ForeColor = Color.Black;
             }
         }
-
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            Temp =  txtTimKiem.Text;
+            cmb = cmbTimKiem.Text;
+            frmTimKiemThucDon frmTD = new frmTimKiemThucDon();
+            frmTD.Show();
+        }
         #endregion
 
         #region Combobox
@@ -210,7 +218,7 @@ namespace QuanLyNhaHang1
 //đây là bảng nhóm món
         private void ThemNhomMon()
         {
-            DialogResult dlr = MessageBox.Show("Bạn muốn thêm món ăn?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult dlr = MessageBox.Show("Bạn muốn thêm NHÓM MÓN không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dlr == DialogResult.Yes)
             {
                 con.OpenConnection();
@@ -309,7 +317,7 @@ namespace QuanLyNhaHang1
                 {
                     if (us.Contains(txtmamon.Text))
                     {
-                        MessageBox.Show("Mã hoá đơn đã tồn tại!", "Thông báo");
+                        MessageBox.Show("Mã món ăn đã tồn tại!", "Thông báo");
                         check = false;
                         break;
                     }
@@ -330,7 +338,7 @@ namespace QuanLyNhaHang1
             else
 
             {
-                MessageBox.Show("Chưa nhập mã hoá đơn, mã nhân viên hoặc mã khách hàng", "Thông báo");
+                MessageBox.Show("Chưa nhập mã món ăn hoặc mã nhóm món", "Thông báo");
             }
         }
         //SỬA MÓN ĂN
@@ -373,7 +381,7 @@ namespace QuanLyNhaHang1
                 {
                     if (us.Contains(txtmanma.Text))
                     {
-                        MessageBox.Show("Mã hoá đơn đã tồn tại!", "Thông báo");
+                        MessageBox.Show("Mã nhóm món ăn đã tồn tại!", "Thông báo");
                         check = false;
                         break;
                     }
@@ -392,7 +400,7 @@ namespace QuanLyNhaHang1
             else
 
             {
-                MessageBox.Show("Chưa nhập mã hoá đơn, mã nhân viên hoặc mã khách hàng", "Thông báo");
+                MessageBox.Show("Chưa nhập mã nhóm món ăn", "Thông báo");
             }
         }
         //SỬA NHÓM MÓN
@@ -426,8 +434,9 @@ namespace QuanLyNhaHang1
         }
 
 
+
         #endregion
 
-
+       
     }
 }

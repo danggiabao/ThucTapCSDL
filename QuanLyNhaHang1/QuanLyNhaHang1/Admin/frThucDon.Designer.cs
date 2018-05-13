@@ -44,7 +44,7 @@
             this.btnThemMon = new System.Windows.Forms.Button();
             this.btnXoaMon = new System.Windows.Forms.Button();
             this.btnSuaMon = new System.Windows.Forms.Button();
-            this.searchbox1 = new System.Windows.Forms.TextBox();
+            this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btnlammoi = new System.Windows.Forms.Button();
@@ -64,6 +64,8 @@
             this.lvNhomMon = new System.Windows.Forms.ListView();
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cmbTimKiem = new System.Windows.Forms.ComboBox();
+            this.btnTimKiem = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -230,15 +232,15 @@
             this.btnSuaMon.UseVisualStyleBackColor = true;
             this.btnSuaMon.Click += new System.EventHandler(this.btnSuaMon_Click);
             // 
-            // searchbox1
+            // txtTimKiem
             // 
-            this.searchbox1.Location = new System.Drawing.Point(658, 1);
-            this.searchbox1.Margin = new System.Windows.Forms.Padding(2);
-            this.searchbox1.Name = "searchbox1";
-            this.searchbox1.Size = new System.Drawing.Size(150, 21);
-            this.searchbox1.TabIndex = 21;
-            this.searchbox1.Enter += new System.EventHandler(this.searchbox1_Enter);
-            this.searchbox1.Leave += new System.EventHandler(this.searchbox1_Leave);
+            this.txtTimKiem.Location = new System.Drawing.Point(412, 1);
+            this.txtTimKiem.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.Size = new System.Drawing.Size(150, 21);
+            this.txtTimKiem.TabIndex = 21;
+            this.txtTimKiem.Enter += new System.EventHandler(this.searchbox1_Enter);
+            this.txtTimKiem.Leave += new System.EventHandler(this.searchbox1_Leave);
             // 
             // tabControl1
             // 
@@ -255,9 +257,11 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.tabPage1.Controls.Add(this.btnTimKiem);
+            this.tabPage1.Controls.Add(this.cmbTimKiem);
             this.tabPage1.Controls.Add(this.btnlammoi);
             this.tabPage1.Controls.Add(this.label8);
-            this.tabPage1.Controls.Add(this.searchbox1);
+            this.tabPage1.Controls.Add(this.txtTimKiem);
             this.tabPage1.Controls.Add(this.btnXoaMon);
             this.tabPage1.Controls.Add(this.lvThucDon);
             this.tabPage1.Controls.Add(this.btnSuaMon);
@@ -484,6 +488,28 @@
             this.columnHeader6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.columnHeader6.Width = 150;
             // 
+            // cmbTimKiem
+            // 
+            this.cmbTimKiem.FormattingEnabled = true;
+            this.cmbTimKiem.Items.AddRange(new object[] {
+            "Theo Mã Món",
+            "Theo Tên Món",
+            "Theo Nhóm Món"});
+            this.cmbTimKiem.Location = new System.Drawing.Point(577, -2);
+            this.cmbTimKiem.Name = "cmbTimKiem";
+            this.cmbTimKiem.Size = new System.Drawing.Size(121, 23);
+            this.cmbTimKiem.TabIndex = 25;
+            // 
+            // btnTimKiem
+            // 
+            this.btnTimKiem.Location = new System.Drawing.Point(717, 0);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.Size = new System.Drawing.Size(75, 23);
+            this.btnTimKiem.TabIndex = 26;
+            this.btnTimKiem.Text = "Tìm Kiếm";
+            this.btnTimKiem.UseVisualStyleBackColor = true;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
+            // 
             // frThucDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -529,7 +555,7 @@
         private System.Windows.Forms.Button btnThemMon;
         private System.Windows.Forms.Button btnXoaMon;
         private System.Windows.Forms.Button btnSuaMon;
-        private System.Windows.Forms.TextBox searchbox1;
+        private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
@@ -549,5 +575,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.Button btnlm;
         private System.Windows.Forms.Button btnlammoi;
+        private System.Windows.Forms.Button btnTimKiem;
+        private System.Windows.Forms.ComboBox cmbTimKiem;
     }
 }

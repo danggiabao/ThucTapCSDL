@@ -10,12 +10,9 @@ namespace QuanLyNhaHang1
 {
     class DataConnections
     {
-        string Strcon = @"Data Source=DESKTOP-J3GADKO\SQLEXPRESS;Initial Catalog=QLNH2;Integrated Security=True";
-        public SqlConnection conn = null;
+        public SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-J3GADKO\SQLEXPRESS;Initial Catalog=QLNH2;Integrated Security=True");
         public void OpenConnection()
         {
-            if (conn == null) // kiểm tra có kết nối chưa..chưa kết nối thì sẽ khởi tạo kết nối
-                conn = new SqlConnection(Strcon);
             if (conn.State == ConnectionState.Closed)
                 conn.Open();
         }

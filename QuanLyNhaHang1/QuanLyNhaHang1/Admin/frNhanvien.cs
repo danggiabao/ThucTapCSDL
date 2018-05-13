@@ -13,13 +13,15 @@ namespace QuanLyNhaHang1
 {
     public partial class frNhanvien : Form
     {
+        public static string cmb;
+        public static string Temp;
         public frNhanvien()
         {
             InitializeComponent();
-            searchBox.ForeColor = Color.LightGray;
-            searchBox.Text = "Tìm kiếm";
-            this.searchBox.Leave += new System.EventHandler(this.searchBox_Leave);
-            this.searchBox.Enter += new System.EventHandler(this.searchBox_Enter);
+            txtTimKiem.ForeColor = Color.LightGray;
+            txtTimKiem.Text = "Tìm kiếm";
+            this.txtTimKiem.Leave += new System.EventHandler(this.searchBox_Leave);
+            this.txtTimKiem.Enter += new System.EventHandler(this.searchBox_Enter);
         }
 
         DataConnections con = new DataConnections();
@@ -56,30 +58,21 @@ namespace QuanLyNhaHang1
         }
         #endregion     
         #region SearchBox
-        private void searchBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void searchBox_DragLeave(object sender, EventArgs e)
-        {
-
-        }
-
         private void searchBox_Leave(object sender, EventArgs e)
         {
-            if (searchBox.Text == "")
+            if (txtTimKiem.Text == "")
             {
-                searchBox.Text = "Tìm kiếm";
-                searchBox.ForeColor = Color.Gray;
+                txtTimKiem.Text = "Tìm kiếm";
+                txtTimKiem.ForeColor = Color.Gray;
             }
         }
 
         private void searchBox_Enter(object sender, EventArgs e)
         {
-            if (searchBox.Text == "Tìm kiếm")
+            if (txtTimKiem.Text == "Tìm kiếm")
             {
-                searchBox.Text = "";
-                searchBox.ForeColor = Color.Black;
+                txtTimKiem.Text = "";
+                txtTimKiem.ForeColor = Color.Black;
             }
         }
         #endregion
@@ -329,9 +322,16 @@ namespace QuanLyNhaHang1
             txtbQue.ResetText();
             dtNgaySinh.ResetText();
         }
+
+
         #endregion
 
-        
-
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            Temp = txtTimKiem.Text;
+            cmb = cmbTimKiem.Text;
+            frmTimKiemNhanVien frmNV = new frmTimKiemNhanVien();
+            frmNV.Show();
+        }
     }
 }

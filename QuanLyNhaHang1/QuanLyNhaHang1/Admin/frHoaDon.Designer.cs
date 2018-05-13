@@ -52,6 +52,8 @@
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.cmbTimKiem = new System.Windows.Forms.ComboBox();
+            this.btnTimKiem = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,7 +76,7 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(3, 357);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(798, 132);
             this.panel2.TabIndex = 1;
@@ -83,7 +85,7 @@
             // 
             this.btnRs.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnRs.Location = new System.Drawing.Point(633, 98);
-            this.btnRs.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRs.Margin = new System.Windows.Forms.Padding(2);
             this.btnRs.Name = "btnRs";
             this.btnRs.Size = new System.Drawing.Size(139, 24);
             this.btnRs.TabIndex = 23;
@@ -96,7 +98,7 @@
             this.btnThoat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnThoat.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThoat.Location = new System.Drawing.Point(712, 57);
-            this.btnThoat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnThoat.Margin = new System.Windows.Forms.Padding(2);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(70, 27);
             this.btnThoat.TabIndex = 22;
@@ -107,7 +109,7 @@
             // 
             this.btnXoa.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.Location = new System.Drawing.Point(618, 57);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(2);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(70, 27);
             this.btnXoa.TabIndex = 21;
@@ -119,7 +121,7 @@
             // 
             this.btnSua.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua.Location = new System.Drawing.Point(712, 11);
-            this.btnSua.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSua.Margin = new System.Windows.Forms.Padding(2);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(70, 27);
             this.btnSua.TabIndex = 20;
@@ -131,7 +133,7 @@
             // 
             this.btnThem.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.Location = new System.Drawing.Point(618, 11);
-            this.btnThem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(2);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(70, 27);
             this.btnThem.TabIndex = 19;
@@ -145,7 +147,7 @@
             this.giott.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.giott.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.giott.Location = new System.Drawing.Point(375, 54);
-            this.giott.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.giott.Margin = new System.Windows.Forms.Padding(2);
             this.giott.Name = "giott";
             this.giott.ShowUpDown = true;
             this.giott.Size = new System.Drawing.Size(188, 20);
@@ -156,7 +158,7 @@
             // 
             this.ngaylap.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.ngaylap.Location = new System.Drawing.Point(375, 15);
-            this.ngaylap.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ngaylap.Margin = new System.Windows.Forms.Padding(2);
             this.ngaylap.Name = "ngaylap";
             this.ngaylap.Size = new System.Drawing.Size(189, 20);
             this.ngaylap.TabIndex = 8;
@@ -166,7 +168,7 @@
             // 
             this.cbbnv.FormattingEnabled = true;
             this.cbbnv.Location = new System.Drawing.Point(98, 85);
-            this.cbbnv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbbnv.Margin = new System.Windows.Forms.Padding(2);
             this.cbbnv.Name = "cbbnv";
             this.cbbnv.Size = new System.Drawing.Size(166, 21);
             this.cbbnv.TabIndex = 7;
@@ -176,7 +178,7 @@
             // 
             this.cbbkh.FormattingEnabled = true;
             this.cbbkh.Location = new System.Drawing.Point(98, 50);
-            this.cbbkh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbbkh.Margin = new System.Windows.Forms.Padding(2);
             this.cbbkh.Name = "cbbkh";
             this.cbbkh.Size = new System.Drawing.Size(166, 21);
             this.cbbkh.TabIndex = 6;
@@ -185,11 +187,10 @@
             // txtmahd
             // 
             this.txtmahd.Location = new System.Drawing.Point(98, 15);
-            this.txtmahd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtmahd.Margin = new System.Windows.Forms.Padding(2);
             this.txtmahd.Name = "txtmahd";
             this.txtmahd.Size = new System.Drawing.Size(166, 20);
             this.txtmahd.TabIndex = 5;
-            //this.txtmahd.TextChanged += new System.EventHandler(this.txtmahd_TextChanged);
             // 
             // label5
             // 
@@ -257,7 +258,7 @@
             this.lvHD.FullRowSelect = true;
             this.lvHD.GridLines = true;
             this.lvHD.Location = new System.Drawing.Point(3, 28);
-            this.lvHD.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lvHD.Margin = new System.Windows.Forms.Padding(2);
             this.lvHD.Name = "lvHD";
             this.lvHD.Size = new System.Drawing.Size(799, 324);
             this.lvHD.TabIndex = 2;
@@ -297,8 +298,8 @@
             // txtTimKiem
             // 
             this.txtTimKiem.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.txtTimKiem.Location = new System.Drawing.Point(655, 6);
-            this.txtTimKiem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTimKiem.Location = new System.Drawing.Point(407, 4);
+            this.txtTimKiem.Margin = new System.Windows.Forms.Padding(2);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(147, 20);
             this.txtTimKiem.TabIndex = 3;
@@ -317,6 +318,28 @@
             this.label6.TabIndex = 6;
             this.label6.Text = "Thông tin hóa đơn";
             // 
+            // cmbTimKiem
+            // 
+            this.cmbTimKiem.FormattingEnabled = true;
+            this.cmbTimKiem.Items.AddRange(new object[] {
+            "THEO MÃ HÓA ĐƠN",
+            "Theo Mã khách hàng",
+            "Theo Mã nhân viên"});
+            this.cmbTimKiem.Location = new System.Drawing.Point(559, 3);
+            this.cmbTimKiem.Name = "cmbTimKiem";
+            this.cmbTimKiem.Size = new System.Drawing.Size(121, 21);
+            this.cmbTimKiem.TabIndex = 7;
+            // 
+            // btnTimKiem
+            // 
+            this.btnTimKiem.Location = new System.Drawing.Point(700, 3);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.Size = new System.Drawing.Size(75, 23);
+            this.btnTimKiem.TabIndex = 8;
+            this.btnTimKiem.Text = "Tìm Kiếm";
+            this.btnTimKiem.UseVisualStyleBackColor = true;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
+            // 
             // frHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -325,11 +348,13 @@
             this.BackColor = System.Drawing.Color.CornflowerBlue;
             this.CancelButton = this.btnThoat;
             this.ClientSize = new System.Drawing.Size(803, 491);
+            this.Controls.Add(this.btnTimKiem);
+            this.Controls.Add(this.cmbTimKiem);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.lvHD);
             this.Controls.Add(this.panel2);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frHoaDon";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hóa đơn";
@@ -367,5 +392,7 @@
         private System.Windows.Forms.DateTimePicker ngaylap;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnRs;
+        private System.Windows.Forms.ComboBox cmbTimKiem;
+        private System.Windows.Forms.Button btnTimKiem;
     }
 }

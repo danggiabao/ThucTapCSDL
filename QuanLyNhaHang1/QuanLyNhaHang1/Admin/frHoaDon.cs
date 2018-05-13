@@ -12,6 +12,8 @@ namespace QuanLyNhaHang1
 {
     public partial class frHoaDon : Form
     {
+        public static string Temp;
+        public static string cmb;
         public frHoaDon()
         {
             InitializeComponent();
@@ -123,6 +125,13 @@ namespace QuanLyNhaHang1
                 txtTimKiem.Text = "";
                 txtTimKiem.ForeColor = Color.Black;
             }
+        }
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            Temp = txtTimKiem.Text;
+            cmb = cmbTimKiem.Text;
+            frmTimKiemHoaDon frmHD = new frmTimKiemHoaDon();
+            frmHD.Show();
         }
         #endregion
         #region Combobox
@@ -297,6 +306,6 @@ namespace QuanLyNhaHang1
             
         }
 
-        
+       
     }
 }

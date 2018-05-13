@@ -77,6 +77,24 @@
       <DependentUpon>frHoaDon.cs</DependentUpon>
     </Compile>
     <Compile Include="DataConnections.cs" />
+    <Compile Include="Search\frmTimKiemHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Search\frmTimKiemHoaDon.designer.cs">
+      <DependentUpon>frmTimKiemHoaDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Search\frmTimKiemNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Search\frmTimKiemNhanVien.designer.cs">
+      <DependentUpon>frmTimKiemNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Search\frmTimKiemThucDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Search\frmTimKiemThucDon.designer.cs">
+      <DependentUpon>frmTimKiemThucDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login\frLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +157,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\frHoaDon.resx">
       <DependentUpon>frHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Search\frmTimKiemHoaDon.resx">
+      <DependentUpon>frmTimKiemHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Search\frmTimKiemNhanVien.resx">
+      <DependentUpon>frmTimKiemNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Search\frmTimKiemThucDon.resx">
+      <DependentUpon>frmTimKiemThucDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login\frLogin.resx">
       <DependentUpon>frLogin.cs</DependentUpon>
