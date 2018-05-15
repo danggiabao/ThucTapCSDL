@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="QLNH2DataSet" targetNamespace="http://tempuri.org/QLNH2DataSet.xsd" xmlns:mstns="http://tempuri.org/QLNH2DataSet.xsd" xmlns="http://tempuri.org/QLNH2DataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="QLNH2ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="QLNH2ConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.QuanLyNhaHang1.Properties.Settings.GlobalReference.Default.QLNH2ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DoanhThuTableAdapter" GeneratorDataComponentClassName="DoanhThuTableAdapter" Name="DoanhThu" UserDataComponentName="DoanhThuTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="QLNH2ConnectionString (Settings)" DbObjectName="QLNH2.dbo.DoanhThu" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT NGAYLAP, THANHTIEN FROM dbo.DoanhThu</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="NGAYLAP" DataSetColumn="NGAYLAP" />
+              <Mapping SourceColumn="THANHTIEN" DataSetColumn="THANHTIEN" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="QLNH2DataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="QLNH2DataSet" msprop:Generator_UserDSName="QLNH2DataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DoanhThu" msprop:Generator_TableClassName="DoanhThuDataTable" msprop:Generator_TableVarName="tableDoanhThu" msprop:Generator_TablePropName="DoanhThu" msprop:Generator_RowDeletingName="DoanhThuRowDeleting" msprop:Generator_RowChangingName="DoanhThuRowChanging" msprop:Generator_RowEvHandlerName="DoanhThuRowChangeEventHandler" msprop:Generator_RowDeletedName="DoanhThuRowDeleted" msprop:Generator_UserTableName="DoanhThu" msprop:Generator_RowChangedName="DoanhThuRowChanged" msprop:Generator_RowEvArgName="DoanhThuRowChangeEvent" msprop:Generator_RowClassName="DoanhThuRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NGAYLAP" msprop:Generator_ColumnVarNameInTable="columnNGAYLAP" msprop:Generator_ColumnPropNameInRow="NGAYLAP" msprop:Generator_ColumnPropNameInTable="NGAYLAPColumn" msprop:Generator_UserColumnName="NGAYLAP" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="THANHTIEN" msprop:Generator_ColumnVarNameInTable="columnTHANHTIEN" msprop:Generator_ColumnPropNameInRow="THANHTIEN" msprop:Generator_ColumnPropNameInTable="THANHTIENColumn" msprop:Generator_UserColumnName="THANHTIEN" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

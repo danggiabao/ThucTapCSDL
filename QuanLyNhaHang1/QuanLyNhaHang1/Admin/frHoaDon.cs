@@ -38,6 +38,7 @@ namespace QuanLyNhaHang1
             ngaylap.Text = liv.SubItems[2].Text;
             giott.Text = liv.SubItems[3].Text;
             cbbnv.Text = liv.SubItems[4].Text;
+            txbThanhTien.Text = liv.SubItems[5].Text;
         }
         public void showHoaDon()
         {
@@ -46,7 +47,7 @@ namespace QuanLyNhaHang1
             btnXoa.Enabled = false;
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select MAHD,KHACHHANG.MAKH,NGAYLAP,GIOTHANHTOAN,NHANVIEN.MANV from HOADON,KHACHHANG,NHANVIEN WHERE KHACHHANG.MAKH=HOADON.MAKH AND HOADON.MANV=NHANVIEN.MANV";           
+            cmd.CommandText = "select MAHD,KHACHHANG.MAKH,NGAYLAP,GIOTHANHTOAN,NHANVIEN.MANV,THANHTIEN from HOADON,KHACHHANG,NHANVIEN WHERE KHACHHANG.MAKH=HOADON.MAKH AND HOADON.MANV=NHANVIEN.MANV";
             cmd.Connection = con.conn;
 
             SqlDataReader reader = cmd.ExecuteReader();
@@ -57,6 +58,7 @@ namespace QuanLyNhaHang1
                 liv.SubItems.Add(reader.GetDateTime(2).ToString());
                 liv.SubItems.Add(reader.GetDateTime(3).ToString());
                 liv.SubItems.Add(reader.GetString(4));
+                liv.SubItems.Add(reader.GetInt32(5).ToString());
                 list.Add(reader.GetString(0));
                 lvHD.Items.Add(liv);
             }
@@ -76,8 +78,7 @@ namespace QuanLyNhaHang1
             cbbkh.Items.Clear();
             while (reader.Read())
             {
-                string makh1 = reader.GetString(0);
-                
+                string makh1 = reader.GetString(0);               
                 cbbkh.Items.Add(makh1);
             }
             reader.Close();
@@ -95,8 +96,7 @@ namespace QuanLyNhaHang1
             cbbnv.Items.Clear();
             while (reader.Read())
             {
-                string manv1 = reader.GetString(0);
-                
+                string manv1 = reader.GetString(0);          
                 cbbnv.Items.Add(manv1);
             }
             reader.Close();
@@ -166,7 +166,7 @@ namespace QuanLyNhaHang1
                 cmd.Parameters.Add("@GIOTHANHTOAN", SqlDbType.DateTime).Value = giott.Value;
                 cmd.Parameters.Add("@MANV", SqlDbType.VarChar).Value = cbbnv.Text;
                 cmd.Parameters.Add("@MAKH", SqlDbType.VarChar).Value = cbbkh.Text;
-
+                cmd.Parameters.Add("@THANHTIEN", SqlDbType.Int).Value = txbThanhTien.Text;
                 int ret = cmd.ExecuteNonQuery();
                 lvHD.Items.Clear();
                 if (ret > 0)
@@ -189,36 +189,57 @@ namespace QuanLyNhaHang1
 
         private void SuaHD()
         {
-            con.OpenConnection();
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "ALTER_HOADON";
-            cmd.Connection = con.conn;
-            cmd.Parameters.Add("@MAHD", SqlDbType.VarChar).Value = txtmahd.Text;
-            cmd.Parameters.Add("@NGAYLAP", SqlDbType.Date).Value = ngaylap.Value;
-            cmd.Parameters.Add("@GIOTHANHTOAN", SqlDbType.DateTime).Value = giott.Value;
-            cmd.Parameters.Add("@MANV", SqlDbType.VarChar).Value = cbbnv.Text;
-            cmd.Parameters.Add("@MAKH", SqlDbType.VarChar).Value = cbbkh.Text;
-            int ret = cmd.ExecuteNonQuery();
-            lvHD.Items.Clear();
-            if (ret > 0)
+            DialogResult dlr = MessageBox.Show("Bạn muốn sửa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dlr == DialogResult.Yes)
+            {
+                con.OpenConnection();
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "ALTER_HOADON";
+                cmd.Connection = con.conn;
+                cmd.Parameters.Add("@MAHD", SqlDbType.VarChar).Value = txtmahd.Text;
+                cmd.Parameters.Add("@NGAYLAP", SqlDbType.Date).Value = ngaylap.Value;
+                cmd.Parameters.Add("@GIOTHANHTOAN", SqlDbType.DateTime).Value = giott.Value;
+                cmd.Parameters.Add("@MANV", SqlDbType.VarChar).Value = cbbnv.Text;
+                cmd.Parameters.Add("@MAKH", SqlDbType.VarChar).Value = cbbkh.Text;
+                cmd.Parameters.Add("@THANHTIEN", SqlDbType.Int).Value = txbThanhTien.Text;
+                int ret = cmd.ExecuteNonQuery();
+                lvHD.Items.Clear();
+                if (ret > 0)
+                    showHoaDon();
+                MessageBox.Show("Đã sửa thành công!", "Sửa");
+            }
+            else
+            {
+                lvHD.Items.Clear();
                 showHoaDon();
+            }
 
         }
 
         public void XoaHD()
         {
-            con.OpenConnection();
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "D_HOADON";
-            cmd.Connection = con.conn;
+            DialogResult dlr = MessageBox.Show("Bạn muốn xóa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dlr == DialogResult.Yes)
+            {
+                con.OpenConnection();
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "D_HOADON";
+                cmd.Connection = con.conn;
 
-            cmd.Parameters.Add("@MAHD", SqlDbType.NVarChar).Value = txtmahd.Text;
-            int ret = cmd.ExecuteNonQuery();
-            lvHD.Items.Clear();
-            if (ret > 0)
+                cmd.Parameters.Add("@MAHD", SqlDbType.NVarChar).Value = txtmahd.Text;
+                int ret = cmd.ExecuteNonQuery();
+                lvHD.Items.Clear();
+                if (ret > 0)
+                    showHoaDon();
+                MessageBox.Show("Đã xoá thành công!", "Xoá");
+            }
+            else
+            {
+                lvHD.Items.Clear();
                 showHoaDon();
+            }
         }
         #endregion
         #region Button
@@ -246,6 +267,7 @@ namespace QuanLyNhaHang1
                     liv.SubItems.Add(giott.Text);
                     liv.SubItems.Add(tennv);
                     lvHD.Items.Add(liv);
+                    liv.SubItems.Add(txbThanhTien.Text);
                     ThemHD();
                     
                 }
@@ -267,8 +289,9 @@ namespace QuanLyNhaHang1
             liv.SubItems[2].Text = ngaylap.Text;
             liv.SubItems[3].Text = giott.Text;
             liv.SubItems[4].Text = cbbnv.Text;
+            liv.SubItems[5].Text = txbThanhTien.Text;
             SuaHD();
-            MessageBox.Show("Đã sửa thành công!", "Sửa");
+            
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -285,7 +308,6 @@ namespace QuanLyNhaHang1
                 }
             }
             XoaHD();
-            MessageBox.Show("Đã xoá thành công!", "Xoá");
         }
         #endregion
 

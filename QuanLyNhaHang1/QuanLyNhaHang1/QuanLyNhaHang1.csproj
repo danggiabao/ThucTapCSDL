@@ -77,6 +77,11 @@
       <DependentUpon>frHoaDon.cs</DependentUpon>
     </Compile>
     <Compile Include="DataConnections.cs" />
+    <Compile Include="QLNH2DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLNH2DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Search\frmTimKiemHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +163,7 @@
     <EmbeddedResource Include="Admin\frHoaDon.resx">
       <DependentUpon>frHoaDon.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report1.rdlc" />
     <EmbeddedResource Include="Search\frmTimKiemHoaDon.resx">
       <DependentUpon>frmTimKiemHoaDon.cs</DependentUpon>
     </EmbeddedResource>
@@ -204,7 +210,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Report1.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -215,6 +220,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="QLNH2DataSet.xsc">
+      <DependentUpon>QLNH2DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLNH2DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLNH2DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLNH2DataSet.xss">
+      <DependentUpon>QLNH2DataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
