@@ -10,7 +10,7 @@ namespace QuanLyNhaHang1
 {
     class DataConnections
     {
-        public SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-4IRSTF4;Initial Catalog=QLNH2;Integrated Security=True");
+        public SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-J3GADKO\SQLEXPRESS;Initial Catalog=QLNH2;Integrated Security=True");
         public void OpenConnection()
         {
             if (conn.State == ConnectionState.Closed)

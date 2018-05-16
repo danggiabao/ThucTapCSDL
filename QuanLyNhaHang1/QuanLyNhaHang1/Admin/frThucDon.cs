@@ -95,12 +95,12 @@ namespace QuanLyNhaHang1
 
         public void showcbbNM()
         {
-            SqlDataAdapter da = new SqlDataAdapter("Select TENNM From NHOMMON", con.conn);
+            SqlDataAdapter da = new SqlDataAdapter("Select * From NHOMMON", con.conn);
             DataTable dt = new DataTable();
             da.Fill(dt);
             cbbNM.DataSource = dt;
             cbbNM.DisplayMember = "TENNM";
-            cbbNM.ValueMember = "TENNM";
+            cbbNM.ValueMember = "MANM";
         }
         private void frThucDon_Load(object sender, EventArgs e)
         {
@@ -160,8 +160,8 @@ namespace QuanLyNhaHang1
                 cmd.Connection = con.conn;
                 cmd.Parameters.Add("@MAMON", SqlDbType.VarChar).Value = txtmamon.Text;
                 cmd.Parameters.Add("@TENMON", SqlDbType.NVarChar).Value = txttenmon.Text;
-                cmd.Parameters.Add("@DONGIA", SqlDbType.Int).Value = Convert.ToInt32("");
-                cmd.Parameters.Add("@MANM", SqlDbType.VarChar).Value = cbbNM.Text;                
+                cmd.Parameters.Add("@DONGIA", SqlDbType.Int).Value = txtdongia.Text;
+                cmd.Parameters.Add("@MANM", SqlDbType.VarChar).Value = cbbNM.SelectedValue;                
 
                 int ret = cmd.ExecuteNonQuery();
                 lvThucDon.Items.Clear();
@@ -191,8 +191,8 @@ namespace QuanLyNhaHang1
             cmd.Connection = con.conn;
             cmd.Parameters.Add("@MAMON", SqlDbType.VarChar).Value = txtmamon.Text;
             cmd.Parameters.Add("@TENMON", SqlDbType.NVarChar).Value = txttenmon.Text;
-            cmd.Parameters.Add("@DONGIA", SqlDbType.Int).Value = Convert.ToInt32("");
-            cmd.Parameters.Add("@TENNM", SqlDbType.VarChar).Value = cbbNM.Text;
+            cmd.Parameters.Add("@DONGIA", SqlDbType.Int).Value = txtdongia.Text;
+            cmd.Parameters.Add("@MANM", SqlDbType.VarChar).Value = cbbNM.SelectedValue;
 
             int ret = cmd.ExecuteNonQuery();
             lvThucDon.Items.Clear();
@@ -254,7 +254,7 @@ namespace QuanLyNhaHang1
             cmd.CommandText = "ALTER_NHOMMON";
             cmd.Connection = con.conn;
             cmd.Parameters.Add("@MANM", SqlDbType.VarChar).Value = txtmanma.Text;
-            cmd.Parameters.Add("@TENNM", SqlDbType.NVarChar).Value = txttennma.Text;
+            cmd.Parameters.Add("@TENM", SqlDbType.NVarChar).Value = txttennma.Text;
           
             int ret = cmd.ExecuteNonQuery();
             lvNhomMon.Items.Clear();
@@ -402,6 +402,7 @@ namespace QuanLyNhaHang1
             {
                 MessageBox.Show("Chưa nhập mã nhóm món ăn", "Thông báo");
             }
+            ShowlistNM();
         }
         //SỬA NHÓM MÓN
         private void btnSuaNM_Click(object sender, EventArgs e)
@@ -414,6 +415,7 @@ namespace QuanLyNhaHang1
             
             SuaNhomMon();
             MessageBox.Show("Đã sửa thành công!", "Sửa");
+            ShowlistNM();
         }
         //XÓA NHÓM MÓN
         private void btnXoaNM_Click(object sender, EventArgs e)
@@ -431,6 +433,7 @@ namespace QuanLyNhaHang1
             }
             XoaNhomMon();
             MessageBox.Show("Đã xoá thành công!", "Xoá");
+            ShowlistNM();
         }
 
 
