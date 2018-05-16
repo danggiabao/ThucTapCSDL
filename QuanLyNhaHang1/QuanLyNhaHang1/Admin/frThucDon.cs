@@ -311,7 +311,7 @@ namespace QuanLyNhaHang1
         private void btnThemMon_Click(object sender, EventArgs e)
         {
             bool check = true;
-            if ((txtmamon.Text != "") && (cbbNM.Text != "") )
+            if ((txtmamon.Text != "") && (txttenmon.Text != "") && (txtdongia.Text != "") )
             {
                 foreach (string us in list)
                 {
@@ -338,7 +338,7 @@ namespace QuanLyNhaHang1
             else
 
             {
-                MessageBox.Show("Chưa nhập mã món ăn hoặc mã nhóm món", "Thông báo");
+                MessageBox.Show("Chưa nhập đủ dữ liệu. Xin vui lòng nhập lại!", "Thông báo");
             }
         }
         //SỬA MÓN ĂN
@@ -375,7 +375,7 @@ namespace QuanLyNhaHang1
         private void btnThemNM_Click(object sender, EventArgs e)
         {
             bool check = true;
-            if (txtmanma.Text != "") 
+            if ((txtmanma.Text != ""))
             {
                 foreach (string us in list)
                 {
@@ -400,7 +400,7 @@ namespace QuanLyNhaHang1
             else
 
             {
-                MessageBox.Show("Chưa nhập mã nhóm món ăn", "Thông báo");
+                MessageBox.Show("Chưa nhập mã nhóm món ăn!", "Thông báo");
             }
             ShowlistNM();
         }
